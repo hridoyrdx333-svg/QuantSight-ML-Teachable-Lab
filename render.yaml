@@ -3,20 +3,7 @@
     name: quantsight-backend
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn -b 0.0.0.0:$PORT ui.app:app"
-    envVars:
-      - key: MASSIVE_API_KEY
-        sync: false
-      - key: BYBIT_DEMO_API_KEY
-        sync: false
-      - key: BYBIT_DEMO_API_SECRET
-        sync: false
-
-  - type: worker
-    name: quantsight-workers
-    env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "python start_bg.py && sleep infinity"
+    startCommand: "python start_bg.py && gunicorn -b 0.0.0.0:$PORT ui.app:app"
     envVars:
       - key: MASSIVE_API_KEY
         sync: false
