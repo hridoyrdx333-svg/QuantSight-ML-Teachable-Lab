@@ -2,6 +2,7 @@
   - type: web
     name: quantsight-backend
     env: python
+    plan: free
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python start_bg.py && gunicorn -b 0.0.0.0:$PORT ui.app:app"
     envVars:
