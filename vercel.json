@@ -1,0 +1,10 @@
+﻿{
+  "buildCommand": "echo 'No build needed'",
+  "outputDirectory": "ui/templates",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://quantsight-backend.onrender.com/api/:path*"
+    }
+  ]
+}
