@@ -9,6 +9,10 @@ import joblib
 import numpy as np
 import pandas as pd
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from ml.journal import append_journal
+
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -613,6 +617,26 @@ def process_symbol(
         "mode":
             "SHADOW_ONLY",
     }
+    
+    append_journal({
+        "timestamp": utc_now_iso(),
+        "symbol": symbol,
+        "feature_version": FEATURE_VERSION,
+        "model_version": MODEL_NAME,
+        "probability": probability,
+        "threshold": threshold,
+        "decision": decision,
+        "market_regime": row.get("trend_regime"),
+        "funding_context": row.get("funding_regime"),
+        "mark_index_basis_context": row.get("mark_index_basis"),
+        "feature_timestamp": start_ms,
+        "feature_age": age_seconds,
+        "future_30m_outcome": None,
+        "future_return": None,
+        "outcome_status": "pending",
+        "tp_sl_class": None,
+        "reason": decision
+    })
 
     append_jsonl(
         SHADOW_LOG,

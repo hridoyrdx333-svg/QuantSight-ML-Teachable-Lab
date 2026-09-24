@@ -1016,6 +1016,28 @@ def readiness_status(
         )
     )
 
+    demo_auth_ready = bool(os.getenv("BYBIT_DEMO_API_KEY") and os.getenv("BYBIT_DEMO_API_SECRET"))
+    
+    place_orders_false = False
+    demo_trader_path = ROOT / "ml" / "demo_trader.py"
+    if demo_trader_path.exists():
+        dt_text = demo_trader_path.read_text()
+        if "PLACE_ORDERS = False" in dt_text:
+            place_orders_false = True
+            
+    demo_paper_ready = bool(
+        historical_ready
+        and funding_ready
+        and feature_ready
+        and training_ready
+        and validation_available
+        and shadow.get("status", {}).get("thresholds")
+        and shadow_ready
+        and demo_auth_ready
+        and place_orders_false
+    )
+
+
     return {
         "historical_data":
             historical_ready,
@@ -1043,15 +1065,7 @@ def readiness_status(
 
         # Deliberately factual:
         # approval remains a separate required step.
-        "paper_trade_ready":
-            bool(
-                historical_ready
-                and feature_ready
-                and training_ready
-                and validation_available
-                and approved_ready
-                and shadow_ready
-            ),
+        "demo_paper_ready": demo_paper_ready,
     }
 
 
@@ -1230,6 +1244,12 @@ def get_status():
         "approved_model":
             readiness.get(
                 "approved_model",
+                False,
+            ),
+            
+        "demo_paper_ready":
+            readiness.get(
+                "demo_paper_ready",
                 False,
             ),
     }

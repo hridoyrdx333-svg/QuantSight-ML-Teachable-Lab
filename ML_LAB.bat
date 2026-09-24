@@ -21,7 +21,7 @@ if not exist ".env" (
 )
 
 echo Starting orchestration...
-start "" ".venv\Scripts\python.exe" launcher.py
+".venv\Scripts\python.exe" launcher.py
 ping 127.0.0.1 -n 3 >nul
 start "" "http://127.0.0.1:8765"
 exit /b 0

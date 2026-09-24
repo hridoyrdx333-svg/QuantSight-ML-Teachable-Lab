@@ -1,6 +1,6 @@
 {
   "feature_version": "v4_context_plus",
-  "generated_at_ms": 1790269779875,
+  "generated_at_ms": 1790280332462,
   "source_timeframe": "5m",
   "label_horizon_bars": 6,
   "gap_policy": "features and labels are calculated inside contiguous 5m segments only",
@@ -9,29 +9,29 @@
   "files": [
     {
       "symbol": "BTCUSDT",
-      "rows": 211001,
+      "rows": 211037,
       "segments": 8,
-      "funding_non_null": 105689,
-      "basis_non_null": 105578,
-      "btc_lag_non_null": 210955,
+      "funding_non_null": 105725,
+      "basis_non_null": 105614,
+      "btc_lag_non_null": 210991,
       "path": "ml\\features\\v4_context_plus\\BTCUSDT_5m.parquet"
     },
     {
       "symbol": "ETHUSDT",
-      "rows": 210969,
+      "rows": 211005,
       "segments": 38,
-      "funding_non_null": 105682,
-      "basis_non_null": 105571,
-      "btc_lag_non_null": 210923,
+      "funding_non_null": 105718,
+      "basis_non_null": 105607,
+      "btc_lag_non_null": 210959,
       "path": "ml\\features\\v4_context_plus\\ETHUSDT_5m.parquet"
     },
     {
       "symbol": "SOLUSDT",
-      "rows": 210654,
+      "rows": 210690,
       "segments": 61,
-      "funding_non_null": 105678,
-      "basis_non_null": 105567,
-      "btc_lag_non_null": 210608,
+      "funding_non_null": 105714,
+      "basis_non_null": 105603,
+      "btc_lag_non_null": 210644,
       "path": "ml\\features\\v4_context_plus\\SOLUSDT_5m.parquet"
     }
   ]

@@ -1,0 +1,41 @@
+{
+  "prediction_count": 27,
+  "evaluated_count": 3,
+  "pending_count": 24,
+  "by_symbol_precision": {
+    "BTCUSDT": {
+      "evaluated": 1,
+      "correct": 1,
+      "precision": 1.0
+    },
+    "ETHUSDT": {
+      "evaluated": 1,
+      "correct": 1,
+      "precision": 1.0
+    },
+    "SOLUSDT": {
+      "evaluated": 1,
+      "correct": 1,
+      "precision": 1.0
+    }
+  },
+  "by_regime_performance": {
+    "1.0": {
+      "evaluated": 3,
+      "correct": 3,
+      "precision": 1.0
+    }
+  },
+  "by_threshold_performance": {
+    "0.56": {
+      "evaluated": 2,
+      "correct": 2,
+      "precision": 1.0
+    },
+    "0.54": {
+      "evaluated": 1,
+      "correct": 1,
+      "precision": 1.0
+    }
+  }
+}

@@ -29,7 +29,7 @@ def start_proc(script, lock_file):
     
     p = subprocess.Popen(
         [str(ROOT / ".venv" / "Scripts" / "python.exe"), script_path],
-        creationflags=subprocess.CREATE_NEW_CONSOLE,
+        creationflags=subprocess.CREATE_NO_WINDOW,
         cwd=str(ROOT),
     )
     lock_path.write_text(str(p.pid))
@@ -39,4 +39,6 @@ if __name__ == "__main__":
     start_proc("collect_live.py", "live_collector.lock")
     start_proc("ml/live_feature_builder.py", "builder.lock")
     start_proc("ml/shadow_runner.py", "shadow.lock")
-    print("All processes started.")
+    print('All processes started.')
+    import time
+    while True: time.sleep(1)
