@@ -1,0 +1,271 @@
+{
+  "phase": 1,
+  "collector": "massive+bybit",
+  "started_at_ms": 1790002223313,
+  "massive_target_start_utc": "2024-09-21T14:50:23.312000+00:00",
+  "target_end_utc": "2026-09-21T14:50:23.312000+00:00",
+  "datasets": [
+    {
+      "dataset": "massive_1m",
+      "symbol": "BTCUSDT",
+      "rows": 1052640,
+      "path": "data\\raw\\massive_1m\\BTCUSDT\\1.parquet",
+      "sha256": "7f2746b826d68a04edb978cc0a5bde19f99816de5cc61806c34e353ca4d4003f"
+    },
+    {
+      "dataset": "massive_resampled_trade_kline",
+      "symbol": "BTCUSDT",
+      "interval": "5",
+      "rows": 210528,
+      "path": "data\\raw\\trade_kline\\BTCUSDT\\5.parquet",
+      "sha256": "c886f83f08bb4f378e9c9b9ece3c15a0d02bd62dc92024fe7767d15f08d6ee6f"
+    },
+    {
+      "dataset": "massive_resampled_trade_kline",
+      "symbol": "BTCUSDT",
+      "interval": "15",
+      "rows": 70176,
+      "path": "data\\raw\\trade_kline\\BTCUSDT\\15.parquet",
+      "sha256": "f2315cc83613c636046d7d009c5fa8fea3a6e3c71e70dd0db452e4f78158c80d"
+    },
+    {
+      "dataset": "massive_resampled_trade_kline",
+      "symbol": "BTCUSDT",
+      "interval": "60",
+      "rows": 17544,
+      "path": "data\\raw\\trade_kline\\BTCUSDT\\60.parquet",
+      "sha256": "fa737566c22762094b4164fea6fb5451b452f053fc22b0466b4fc4e5a5070601"
+    },
+    {
+      "dataset": "mark_kline",
+      "symbol": "BTCUSDT",
+      "interval": "5",
+      "rows": 105120,
+      "path": "data\\raw\\mark_kline\\BTCUSDT\\5.parquet",
+      "sha256": "9052e7fb1544fb931573266eea3cadc5baa64821ca7bb2d5f8ab664c537e9a73"
+    },
+    {
+      "dataset": "index_kline",
+      "symbol": "BTCUSDT",
+      "interval": "5",
+      "rows": 105120,
+      "path": "data\\raw\\index_kline\\BTCUSDT\\5.parquet",
+      "sha256": "65cf89fe5ecad22237ce087aa518915290efebeaef8ff0ed26ae92ef0bec16c7"
+    },
+    {
+      "dataset": "mark_kline",
+      "symbol": "BTCUSDT",
+      "interval": "15",
+      "rows": 35039,
+      "path": "data\\raw\\mark_kline\\BTCUSDT\\15.parquet",
+      "sha256": "eb167939cddd97f8dea55bb8314d6c9b1e167e2060461c0c01ebb398e8a0d704"
+    },
+    {
+      "dataset": "index_kline",
+      "symbol": "BTCUSDT",
+      "interval": "15",
+      "rows": 35040,
+      "path": "data\\raw\\index_kline\\BTCUSDT\\15.parquet",
+      "sha256": "56af83056f062107d37059657e9417f09f7ac37e1ca4e28540398319b0e10b00"
+    },
+    {
+      "dataset": "mark_kline",
+      "symbol": "BTCUSDT",
+      "interval": "60",
+      "rows": 8760,
+      "path": "data\\raw\\mark_kline\\BTCUSDT\\60.parquet",
+      "sha256": "1a3a8f52ecd2f1f3cfc9ee0f15dd38299b3648a730124a523583260a1e5e6a95"
+    },
+    {
+      "dataset": "index_kline",
+      "symbol": "BTCUSDT",
+      "interval": "60",
+      "rows": 8760,
+      "path": "data\\raw\\index_kline\\BTCUSDT\\60.parquet",
+      "sha256": "05cc8b584c1a3b77077a6e36483d11f73ef1f32b6ab3d015924380fdf46f3c93"
+    },
+    {
+      "dataset": "funding",
+      "symbol": "BTCUSDT",
+      "rows": 1095,
+      "path": "data\\raw\\funding\\BTCUSDT\\funding.parquet",
+      "sha256": "6e5ac8f85d6df5095556508940ccb2b3ffab60170d256f99f758c93f4979d65b"
+    },
+    {
+      "dataset": "massive_1m",
+      "symbol": "ETHUSDT",
+      "rows": 1052608,
+      "path": "data\\raw\\massive_1m\\ETHUSDT\\1.parquet",
+      "sha256": "56eba1d44dd22fd5e12e52af1858ecac7440a875d2c0e2b2f4b6e29fa2ab8d59"
+    },
+    {
+      "dataset": "massive_resampled_trade_kline",
+      "symbol": "ETHUSDT",
+      "interval": "5",
+      "rows": 210496,
+      "path": "data\\raw\\trade_kline\\ETHUSDT\\5.parquet",
+      "sha256": "d3dc066406b4ae79e0a78f3501984d1e85606d935b31e6af92564e1a7e235635"
+    },
+    {
+      "dataset": "massive_resampled_trade_kline",
+      "symbol": "ETHUSDT",
+      "interval": "15",
+      "rows": 70145,
+      "path": "data\\raw\\trade_kline\\ETHUSDT\\15.parquet",
+      "sha256": "d838f759596245c0b883692a8c53e1855aa75b3e503fb937d337972ad3a5624e"
+    },
+    {
+      "dataset": "massive_resampled_trade_kline",
+      "symbol": "ETHUSDT",
+      "interval": "60",
+      "rows": 17522,
+      "path": "data\\raw\\trade_kline\\ETHUSDT\\60.parquet",
+      "sha256": "ff50538f95e3e51ec9e678035e25c4ada13ca5c0b02bc14e5b1811c7df772894"
+    },
+    {
+      "dataset": "mark_kline",
+      "symbol": "ETHUSDT",
+      "interval": "5",
+      "rows": 105120,
+      "path": "data\\raw\\mark_kline\\ETHUSDT\\5.parquet",
+      "sha256": "8cbbb7faedf8de7a68906194e27b475374961716ab73ea8020dc60a896794ea3"
+    },
+    {
+      "dataset": "index_kline",
+      "symbol": "ETHUSDT",
+      "interval": "5",
+      "rows": 105120,
+      "path": "data\\raw\\index_kline\\ETHUSDT\\5.parquet",
+      "sha256": "b4cf5aa35f86c1e602907c138cfda6b866bf67145552db9009e9799f424a16c7"
+    },
+    {
+      "dataset": "mark_kline",
+      "symbol": "ETHUSDT",
+      "interval": "15",
+      "rows": 35040,
+      "path": "data\\raw\\mark_kline\\ETHUSDT\\15.parquet",
+      "sha256": "fe171b23027e6bcbef29994ee90927d22d4db3b285fb8907bdcc1dabdd1d73d0"
+    },
+    {
+      "dataset": "index_kline",
+      "symbol": "ETHUSDT",
+      "interval": "15",
+      "rows": 35040,
+      "path": "data\\raw\\index_kline\\ETHUSDT\\15.parquet",
+      "sha256": "6a9a2a0d5d0a4c305667351a2e8e58c378059af55ac7f977a0997219760e2c45"
+    },
+    {
+      "dataset": "mark_kline",
+      "symbol": "ETHUSDT",
+      "interval": "60",
+      "rows": 8760,
+      "path": "data\\raw\\mark_kline\\ETHUSDT\\60.parquet",
+      "sha256": "3d673c3f567ac5fa04b5d8c4925fcaa53c988ddfb498d2416e9e37a4158f207e"
+    },
+    {
+      "dataset": "index_kline",
+      "symbol": "ETHUSDT",
+      "interval": "60",
+      "rows": 8760,
+      "path": "data\\raw\\index_kline\\ETHUSDT\\60.parquet",
+      "sha256": "07158af15ccce87f704619b319c187ab1df45c4fdd16bf96440ec8e14c256be1"
+    },
+    {
+      "dataset": "funding",
+      "symbol": "ETHUSDT",
+      "rows": 1095,
+      "path": "data\\raw\\funding\\ETHUSDT\\funding.parquet",
+      "sha256": "32539328a3a3ec8f672a1b6982bade35cf6daa6f314522d8a69d9803ac26c50b"
+    },
+    {
+      "dataset": "massive_1m",
+      "symbol": "SOLUSDT",
+      "rows": 1051138,
+      "path": "data\\raw\\massive_1m\\SOLUSDT\\1.parquet",
+      "sha256": "d29b9e2500ef1c7babecc6466638cc947b5f91a042bc5930588e8f9294d4c650"
+    },
+    {
+      "dataset": "massive_resampled_trade_kline",
+      "symbol": "SOLUSDT",
+      "interval": "5",
+      "rows": 210181,
+      "path": "data\\raw\\trade_kline\\SOLUSDT\\5.parquet",
+      "sha256": "d684f458d519fcbe0a3ec8c8c34f66e52ef8ab7dee46ddfc9df5490981997410"
+    },
+    {
+      "dataset": "massive_resampled_trade_kline",
+      "symbol": "SOLUSDT",
+      "interval": "15",
+      "rows": 70028,
+      "path": "data\\raw\\trade_kline\\SOLUSDT\\15.parquet",
+      "sha256": "2eb0f79c807d5e6b824ca249439bd1b3148e36cbddd91e549fb28cdeb7615862"
+    },
+    {
+      "dataset": "massive_resampled_trade_kline",
+      "symbol": "SOLUSDT",
+      "interval": "60",
+      "rows": 17480,
+      "path": "data\\raw\\trade_kline\\SOLUSDT\\60.parquet",
+      "sha256": "0962fd06971e839652b4c499a55726f5a52b1e9c1511bb653a19a62ce29ef0c6"
+    },
+    {
+      "dataset": "mark_kline",
+      "symbol": "SOLUSDT",
+      "interval": "5",
+      "rows": 105120,
+      "path": "data\\raw\\mark_kline\\SOLUSDT\\5.parquet",
+      "sha256": "aafbfdab0fc8f660b0c102de6479d273fd60dd6d064e92df95c7e18b467251c8"
+    },
+    {
+      "dataset": "index_kline",
+      "symbol": "SOLUSDT",
+      "interval": "5",
+      "rows": 105120,
+      "path": "data\\raw\\index_kline\\SOLUSDT\\5.parquet",
+      "sha256": "d6575b5c3cffbf31497481132df7ed333bcfeb8f44f3b3e130d34cc295b3efb2"
+    },
+    {
+      "dataset": "mark_kline",
+      "symbol": "SOLUSDT",
+      "interval": "15",
+      "rows": 35040,
+      "path": "data\\raw\\mark_kline\\SOLUSDT\\15.parquet",
+      "sha256": "ba2c4d357d3c48a48bc31f5fd7876570ff7b688954bdea1a7f33bd86f1c3c687"
+    },
+    {
+      "dataset": "index_kline",
+      "symbol": "SOLUSDT",
+      "interval": "15",
+      "rows": 35040,
+      "path": "data\\raw\\index_kline\\SOLUSDT\\15.parquet",
+      "sha256": "380bfa2c994c6809adb6c67e83398ccbcce70d224096145f7319fd640ec18d32"
+    },
+    {
+      "dataset": "mark_kline",
+      "symbol": "SOLUSDT",
+      "interval": "60",
+      "rows": 8760,
+      "path": "data\\raw\\mark_kline\\SOLUSDT\\60.parquet",
+      "sha256": "2aa44e32a54af9b2cb3176232e1435be2cae3e0a22c1c2231305f1127bf4703c"
+    },
+    {
+      "dataset": "index_kline",
+      "symbol": "SOLUSDT",
+      "interval": "60",
+      "rows": 8760,
+      "path": "data\\raw\\index_kline\\SOLUSDT\\60.parquet",
+      "sha256": "ad56dcd73cb742830f971ffae1be779417d23e5876a38b20b0cc049780520e2d"
+    },
+    {
+      "dataset": "funding",
+      "symbol": "SOLUSDT",
+      "rows": 1095,
+      "path": "data\\raw\\funding\\SOLUSDT\\funding.parquet",
+      "sha256": "b5c6787541ca4d65d079c31757fd376a69af4112975a829ead43366315fb9a4f"
+    }
+  ],
+  "errors": [
+    "massive X:BTCUSD 1739890223312-1742482223311: PermissionError: [WinError 5] Access is denied: 'D:\\\\QuantSight-ML-Teachable-Lab\\\\QuantSight-ML-Teachable-Lab\\\\data\\\\raw\\\\massive_1m\\\\BTCUSDT\\\\1.parquet.tmp' -> 'D:\\\\QuantSight-ML-Teachable-Lab\\\\QuantSight-ML-Teachable-Lab\\\\data\\\\raw\\\\massive_1m\\\\BTCUSDT\\\\1.parquet'"
+  ],
+  "finished_at_ms": 1790003894002
+}

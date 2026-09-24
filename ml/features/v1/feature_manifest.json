@@ -1,0 +1,21 @@
+{
+  "feature_version": "v1",
+  "generated_at_ms": 1789924276823,
+  "files": [
+    {
+      "symbol": "BTCUSDT",
+      "rows": 210240,
+      "path": "ml\\features\\v1\\BTCUSDT_5m.parquet"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "rows": 210208,
+      "path": "ml\\features\\v1\\ETHUSDT_5m.parquet"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "rows": 209893,
+      "path": "ml\\features\\v1\\SOLUSDT_5m.parquet"
+    }
+  ]
+}

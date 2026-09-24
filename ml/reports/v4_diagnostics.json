@@ -1,0 +1,550 @@
+{
+  "feature_version": "v4_context_plus",
+  "generated_at_unix": 1790076575.0508559,
+  "features_count": 41,
+  "rows": {
+    "all": 313911,
+    "train": 219580,
+    "validation": 47154,
+    "test": 47141
+  },
+  "baseline": {
+    "rows": 47141,
+    "positive_rate": 0.5031713370526718,
+    "precision": 0.0,
+    "recall": 0.0,
+    "brier": 0.25001700849676467,
+    "roc_auc": 0.5,
+    "log_loss": 0.6931811977632899,
+    "constant_probability": 0.49796884962200566
+  },
+  "overall": {
+    "logistic": {
+      "rows": 47141,
+      "positive_rate": 0.5031713370526718,
+      "precision": 0.5436527509977132,
+      "recall": 0.5111298482293424,
+      "brier": 0.2475645507117031,
+      "roc_auc": 0.5564627973641504,
+      "log_loss": 0.6882575446357907
+    },
+    "random_forest": {
+      "rows": 47141,
+      "positive_rate": 0.5031713370526718,
+      "precision": 0.5387830589975957,
+      "recall": 0.6140809443507589,
+      "brier": 0.24713231567473248,
+      "roc_auc": 0.5586174825593238,
+      "log_loss": 0.6873596113065404
+    },
+    "hist_gradient_boosting": {
+      "rows": 47141,
+      "positive_rate": 0.5031713370526718,
+      "precision": 0.5344285771112613,
+      "recall": 0.5663996627318718,
+      "brier": 0.24891686886237388,
+      "roc_auc": 0.5452309018016361,
+      "log_loss": 0.6910565008570204
+    }
+  },
+  "per_symbol": {
+    "BTCUSDT": {
+      "logistic": {
+        "rows": 15724,
+        "positive_rate": 0.5019715085220046,
+        "precision": 0.535981428939902,
+        "recall": 0.5265425060179906,
+        "brier": 0.24781391772552977,
+        "roc_auc": 0.5504481202524838,
+        "log_loss": 0.6887453124182744
+      },
+      "random_forest": {
+        "rows": 15724,
+        "positive_rate": 0.5019715085220046,
+        "precision": 0.5296170824350682,
+        "recall": 0.6536171291017357,
+        "brier": 0.2477130835203238,
+        "roc_auc": 0.550769475588635,
+        "log_loss": 0.6885171804923341
+      },
+      "hist_gradient_boosting": {
+        "rows": 15724,
+        "positive_rate": 0.5019715085220046,
+        "precision": 0.5236461126005362,
+        "recall": 0.6186494362092994,
+        "brier": 0.24968029277844833,
+        "roc_auc": 0.5373568581035557,
+        "log_loss": 0.6925869946368044
+      }
+    },
+    "ETHUSDT": {
+      "logistic": {
+        "rows": 15724,
+        "positive_rate": 0.5019079114729077,
+        "precision": 0.5550300396267417,
+        "recall": 0.5501773948302078,
+        "brier": 0.2463432587864641,
+        "roc_auc": 0.5741998756708931,
+        "log_loss": 0.6857906900444964
+      },
+      "random_forest": {
+        "rows": 15724,
+        "positive_rate": 0.5019079114729077,
+        "precision": 0.5444319460067492,
+        "recall": 0.6132792701469842,
+        "brier": 0.2459475282068112,
+        "roc_auc": 0.5722531725536831,
+        "log_loss": 0.6849559995078026
+      },
+      "hist_gradient_boosting": {
+        "rows": 15724,
+        "positive_rate": 0.5019079114729077,
+        "precision": 0.5454004522194454,
+        "recall": 0.5807146477445514,
+        "brier": 0.24731407872585104,
+        "roc_auc": 0.5586182746961404,
+        "log_loss": 0.6877602193437284
+      }
+    },
+    "SOLUSDT": {
+      "logistic": {
+        "rows": 15693,
+        "positive_rate": 0.5056394570827758,
+        "precision": 0.5392623438429506,
+        "recall": 0.4569628229363579,
+        "brier": 0.2485383955665459,
+        "roc_auc": 0.5458370431449261,
+        "log_loss": 0.6902405409387116
+      },
+      "random_forest": {
+        "rows": 15693,
+        "positive_rate": 0.5056394570827758,
+        "precision": 0.5434316991908615,
+        "recall": 0.5755513547574039,
+        "brier": 0.24773752847926425,
+        "roc_auc": 0.5540324007269037,
+        "log_loss": 0.6886081153558578
+      },
+      "hist_gradient_boosting": {
+        "rows": 15693,
+        "positive_rate": 0.5056394570827758,
+        "precision": 0.5355552557009851,
+        "recall": 0.5001890359168242,
+        "brier": 0.24975789316941083,
+        "roc_auc": 0.5406367279388653,
+        "log_loss": 0.6928257767329955
+      }
+    }
+  },
+  "random_forest_feature_importance": [
+    {
+      "feature": "index_divergence",
+      "importance": 0.06390544462148853
+    },
+    {
+      "feature": "rsi14",
+      "importance": 0.04888409048123522
+    },
+    {
+      "feature": "mark_divergence",
+      "importance": 0.04809949472378846
+    },
+    {
+      "feature": "ema200_dist",
+      "importance": 0.04301948576716009
+    },
+    {
+      "feature": "btc_ema50_dist",
+      "importance": 0.0410321064473101
+    },
+    {
+      "feature": "ema50_dist",
+      "importance": 0.040016085391202535
+    },
+    {
+      "feature": "btc_vol_12",
+      "importance": 0.037939625401579774
+    },
+    {
+      "feature": "btc_vol_12_lag1",
+      "importance": 0.03704187758599453
+    },
+    {
+      "feature": "ema20_dist",
+      "importance": 0.036597996633165535
+    },
+    {
+      "feature": "realized_vol_48",
+      "importance": 0.03489174665927852
+    },
+    {
+      "feature": "ret_3",
+      "importance": 0.032459121480635005
+    },
+    {
+      "feature": "adx14",
+      "importance": 0.03222138435514568
+    },
+    {
+      "feature": "atr_pct",
+      "importance": 0.028379965926743474
+    },
+    {
+      "feature": "funding_change",
+      "importance": 0.027797202795822526
+    },
+    {
+      "feature": "realized_vol_12",
+      "importance": 0.025897750110338246
+    },
+    {
+      "feature": "btc_ret_6_lag3",
+      "importance": 0.025787385650728866
+    },
+    {
+      "feature": "funding_z_30",
+      "importance": 0.02536528397608501
+    },
+    {
+      "feature": "btc_ret_6",
+      "importance": 0.025051968553980144
+    },
+    {
+      "feature": "ret_6",
+      "importance": 0.02479670459478624
+    },
+    {
+      "feature": "ret_12",
+      "importance": 0.02475554143749141
+    },
+    {
+      "feature": "funding_rate",
+      "importance": 0.024085794933945567
+    },
+    {
+      "feature": "btc_ret_6_lag1",
+      "importance": 0.023823153723077608
+    },
+    {
+      "feature": "btc_ret_1",
+      "importance": 0.022361895774831626
+    },
+    {
+      "feature": "ret_1",
+      "importance": 0.02161570494554534
+    },
+    {
+      "feature": "btc_ret_1_lag1",
+      "importance": 0.01963973989778197
+    },
+    {
+      "feature": "funding_abs",
+      "importance": 0.01891239766439039
+    },
+    {
+      "feature": "range_pct",
+      "importance": 0.018628977839106872
+    },
+    {
+      "feature": "btc_ret_1_lag3",
+      "importance": 0.018130407521773063
+    },
+    {
+      "feature": "volume_z",
+      "importance": 0.017979860227780555
+    },
+    {
+      "feature": "btc_ret_1_lag6",
+      "importance": 0.017777541511574218
+    },
+    {
+      "feature": "mark_index_basis",
+      "importance": 0.017658365023154588
+    },
+    {
+      "feature": "trend_regime",
+      "importance": 0.015071860611122579
+    },
+    {
+      "feature": "basis_z_48",
+      "importance": 0.014658695698468725
+    },
+    {
+      "feature": "body_pct",
+      "importance": 0.01384989022760676
+    },
+    {
+      "feature": "basis_change_3",
+      "importance": 0.012295237972198805
+    },
+    {
+      "feature": "basis_change_1",
+      "importance": 0.011369239158171668
+    },
+    {
+      "feature": "high_vol_regime",
+      "importance": 0.0024613048126323938
+    },
+    {
+      "feature": "funding_regime",
+      "importance": 0.0018979009255350645
+    },
+    {
+      "feature": "symbol_is_sol",
+      "importance": 0.0017368332260760877
+    },
+    {
+      "feature": "symbol_is_eth",
+      "importance": 0.0011519513931221128
+    },
+    {
+      "feature": "symbol_is_btc",
+      "importance": 0.0009529843181441663
+    }
+  ],
+  "logistic_feature_weights": [
+    {
+      "feature": "ema50_dist",
+      "coefficient": 0.19836963500124727,
+      "absolute_importance": 0.19836963500124727
+    },
+    {
+      "feature": "rsi14",
+      "coefficient": -0.19160319636008694,
+      "absolute_importance": 0.19160319636008694
+    },
+    {
+      "feature": "ema20_dist",
+      "coefficient": -0.11163132788316107,
+      "absolute_importance": 0.11163132788316107
+    },
+    {
+      "feature": "funding_rate",
+      "coefficient": -0.08093319136143363,
+      "absolute_importance": 0.08093319136143363
+    },
+    {
+      "feature": "ema200_dist",
+      "coefficient": -0.07253343258761318,
+      "absolute_importance": 0.07253343258761318
+    },
+    {
+      "feature": "range_pct",
+      "coefficient": 0.06869708884046387,
+      "absolute_importance": 0.06869708884046387
+    },
+    {
+      "feature": "atr_pct",
+      "coefficient": -0.06768925265277972,
+      "absolute_importance": 0.06768925265277972
+    },
+    {
+      "feature": "funding_abs",
+      "coefficient": -0.06306781411787804,
+      "absolute_importance": 0.06306781411787804
+    },
+    {
+      "feature": "ret_12",
+      "coefficient": 0.061466204617416725,
+      "absolute_importance": 0.061466204617416725
+    },
+    {
+      "feature": "funding_z_30",
+      "coefficient": 0.06031309787047387,
+      "absolute_importance": 0.06031309787047387
+    },
+    {
+      "feature": "btc_vol_12",
+      "coefficient": 0.05075787030012549,
+      "absolute_importance": 0.05075787030012549
+    },
+    {
+      "feature": "mark_divergence",
+      "coefficient": 0.033936559681977764,
+      "absolute_importance": 0.033936559681977764
+    },
+    {
+      "feature": "index_divergence",
+      "coefficient": 0.032979571845511875,
+      "absolute_importance": 0.032979571845511875
+    },
+    {
+      "feature": "body_pct",
+      "coefficient": -0.031666688409744806,
+      "absolute_importance": 0.031666688409744806
+    },
+    {
+      "feature": "mark_index_basis",
+      "coefficient": -0.031013107635689038,
+      "absolute_importance": 0.031013107635689038
+    },
+    {
+      "feature": "ret_1",
+      "coefficient": -0.025580790444087266,
+      "absolute_importance": 0.025580790444087266
+    },
+    {
+      "feature": "trend_regime",
+      "coefficient": -0.018472221337942577,
+      "absolute_importance": 0.018472221337942577
+    },
+    {
+      "feature": "btc_ret_6_lag3",
+      "coefficient": 0.01844805045610197,
+      "absolute_importance": 0.01844805045610197
+    },
+    {
+      "feature": "ret_6",
+      "coefficient": 0.015315114406040551,
+      "absolute_importance": 0.015315114406040551
+    },
+    {
+      "feature": "funding_regime",
+      "coefficient": -0.013939372469191955,
+      "absolute_importance": 0.013939372469191955
+    },
+    {
+      "feature": "realized_vol_48",
+      "coefficient": -0.013651008285720656,
+      "absolute_importance": 0.013651008285720656
+    },
+    {
+      "feature": "btc_ema50_dist",
+      "coefficient": 0.012958604198589534,
+      "absolute_importance": 0.012958604198589534
+    },
+    {
+      "feature": "volume_z",
+      "coefficient": -0.010962703505728874,
+      "absolute_importance": 0.010962703505728874
+    },
+    {
+      "feature": "ret_3",
+      "coefficient": 0.00830962724858558,
+      "absolute_importance": 0.00830962724858558
+    },
+    {
+      "feature": "btc_ret_1_lag1",
+      "coefficient": -0.008060697820208391,
+      "absolute_importance": 0.008060697820208391
+    },
+    {
+      "feature": "symbol_is_eth",
+      "coefficient": 0.007782229737204638,
+      "absolute_importance": 0.007782229737204638
+    },
+    {
+      "feature": "high_vol_regime",
+      "coefficient": -0.007492693789045559,
+      "absolute_importance": 0.007492693789045559
+    },
+    {
+      "feature": "basis_change_1",
+      "coefficient": 0.0071819727484441955,
+      "absolute_importance": 0.0071819727484441955
+    },
+    {
+      "feature": "btc_ret_1_lag3",
+      "coefficient": 0.006094888890310626,
+      "absolute_importance": 0.006094888890310626
+    },
+    {
+      "feature": "btc_ret_1_lag6",
+      "coefficient": -0.005564605368461171,
+      "absolute_importance": 0.005564605368461171
+    },
+    {
+      "feature": "symbol_is_sol",
+      "coefficient": -0.005030348403785619,
+      "absolute_importance": 0.005030348403785619
+    },
+    {
+      "feature": "funding_change",
+      "coefficient": -0.004454277571535103,
+      "absolute_importance": 0.004454277571535103
+    },
+    {
+      "feature": "realized_vol_12",
+      "coefficient": 0.004184261764923882,
+      "absolute_importance": 0.004184261764923882
+    },
+    {
+      "feature": "basis_change_3",
+      "coefficient": 0.003994035724342186,
+      "absolute_importance": 0.003994035724342186
+    },
+    {
+      "feature": "btc_ret_6",
+      "coefficient": -0.003823908337009595,
+      "absolute_importance": 0.003823908337009595
+    },
+    {
+      "feature": "btc_vol_12_lag1",
+      "coefficient": -0.003530803988119608,
+      "absolute_importance": 0.003530803988119608
+    },
+    {
+      "feature": "btc_ret_1",
+      "coefficient": 0.003042337167066533,
+      "absolute_importance": 0.003042337167066533
+    },
+    {
+      "feature": "symbol_is_btc",
+      "coefficient": -0.002749235720859613,
+      "absolute_importance": 0.002749235720859613
+    },
+    {
+      "feature": "adx14",
+      "coefficient": -0.002733825761988988,
+      "absolute_importance": 0.002733825761988988
+    },
+    {
+      "feature": "btc_ret_6_lag1",
+      "coefficient": -0.0005913775178110472,
+      "absolute_importance": 0.0005913775178110472
+    },
+    {
+      "feature": "basis_z_48",
+      "coefficient": 5.161609686291361e-05,
+      "absolute_importance": 5.161609686291361e-05
+    }
+  ],
+  "walk_forward_random_forest": {
+    "folds": [
+      {
+        "rows": 47144,
+        "positive_rate": 0.4976243000169693,
+        "precision": 0.5282669138090825,
+        "recall": 0.5831202046035806,
+        "brier": 0.24818284965181073,
+        "roc_auc": 0.5482634597937925,
+        "log_loss": 0.6894967385264172,
+        "fold": 1
+      },
+      {
+        "rows": 47175,
+        "positive_rate": 0.49248542660307365,
+        "precision": 0.5205673758865248,
+        "recall": 0.6318598545172814,
+        "brier": 0.24837306016229901,
+        "roc_auc": 0.54577327891031,
+        "log_loss": 0.6898825970294787,
+        "fold": 2
+      },
+      {
+        "rows": 47141,
+        "positive_rate": 0.5031713370526718,
+        "precision": 0.5387056305807689,
+        "recall": 0.6155143338954469,
+        "brier": 0.24713762897062844,
+        "roc_auc": 0.5578307899981374,
+        "log_loss": 0.6873673014113917,
+        "fold": 3
+      }
+    ],
+    "mean_roc_auc": 0.5506225095674133,
+    "min_roc_auc": 0.54577327891031,
+    "max_roc_auc": 0.5578307899981374
+  },
+  "elapsed_seconds": 97.51
+}

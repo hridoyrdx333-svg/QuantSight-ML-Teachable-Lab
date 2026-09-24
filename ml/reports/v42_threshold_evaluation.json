@@ -1,0 +1,321 @@
+{
+  "feature_version": "v4_context_plus",
+  "model": "random_forest",
+  "overall": {
+    "rows": 47141,
+    "positive_rate": 0.5031713370526718,
+    "roc_auc": 0.5586174825593238,
+    "brier": 0.2471323156747325,
+    "log_loss": 0.6873596113065404
+  },
+  "thresholds": [
+    {
+      "threshold": 0.5,
+      "total_rows": 47141,
+      "selected_rows": 27035,
+      "coverage": 0.5734922890901762,
+      "precision": 0.5387830589975957,
+      "recall": 0.6140809443507589,
+      "win_rate": 0.5387830589975957
+    },
+    {
+      "threshold": 0.52,
+      "total_rows": 47141,
+      "selected_rows": 18150,
+      "coverage": 0.38501516726416496,
+      "precision": 0.5507438016528926,
+      "recall": 0.42141652613827996,
+      "win_rate": 0.5507438016528926
+    },
+    {
+      "threshold": 0.54,
+      "total_rows": 47141,
+      "selected_rows": 7777,
+      "coverage": 0.16497316560955433,
+      "precision": 0.5722000771505722,
+      "recall": 0.1876053962900506,
+      "win_rate": 0.5722000771505722
+    },
+    {
+      "threshold": 0.56,
+      "total_rows": 47141,
+      "selected_rows": 2296,
+      "coverage": 0.04870494898283872,
+      "precision": 0.5897212543554007,
+      "recall": 0.05708263069139966,
+      "win_rate": 0.5897212543554007
+    },
+    {
+      "threshold": 0.58,
+      "total_rows": 47141,
+      "selected_rows": 302,
+      "coverage": 0.00640631297596572,
+      "precision": 0.5629139072847682,
+      "recall": 0.007166947723440135,
+      "win_rate": 0.5629139072847682
+    },
+    {
+      "threshold": 0.6,
+      "total_rows": 47141,
+      "selected_rows": 26,
+      "coverage": 0.0005515368787255255,
+      "precision": 0.6923076923076923,
+      "recall": 0.0007588532883642496,
+      "win_rate": 0.6923076923076923
+    },
+    {
+      "threshold": 0.62,
+      "total_rows": 47141,
+      "selected_rows": 4,
+      "coverage": 8.48518274962347e-05,
+      "precision": 1.0,
+      "recall": 0.00016863406408094435,
+      "win_rate": 1.0
+    },
+    {
+      "threshold": 0.65,
+      "total_rows": 47141,
+      "selected_rows": 1,
+      "coverage": 2.1212956874058677e-05,
+      "precision": 1.0,
+      "recall": 4.215851602023609e-05,
+      "win_rate": 1.0
+    }
+  ],
+  "per_symbol": {
+    "BTCUSDT": {
+      "rows": 15724,
+      "roc_auc": 0.550769475588635,
+      "thresholds": [
+        {
+          "threshold": 0.5,
+          "total_rows": 15724,
+          "selected_rows": 9741,
+          "coverage": 0.6194988552531162,
+          "precision": 0.5296170824350682,
+          "recall": 0.6536171291017357,
+          "win_rate": 0.5296170824350682
+        },
+        {
+          "threshold": 0.52,
+          "total_rows": 15724,
+          "selected_rows": 6685,
+          "coverage": 0.4251462732129229,
+          "precision": 0.5428571428571428,
+          "recall": 0.45977448371975166,
+          "win_rate": 0.5428571428571428
+        },
+        {
+          "threshold": 0.54,
+          "total_rows": 15724,
+          "selected_rows": 2998,
+          "coverage": 0.19066395319257187,
+          "precision": 0.5663775850567044,
+          "recall": 0.21512732801216267,
+          "win_rate": 0.5663775850567044
+        },
+        {
+          "threshold": 0.56,
+          "total_rows": 15724,
+          "selected_rows": 987,
+          "coverage": 0.06277028745866192,
+          "precision": 0.5845997973657548,
+          "recall": 0.0731027492715064,
+          "win_rate": 0.5845997973657548
+        },
+        {
+          "threshold": 0.58,
+          "total_rows": 15724,
+          "selected_rows": 165,
+          "coverage": 0.010493513100992113,
+          "precision": 0.5454545454545454,
+          "recall": 0.011402508551881414,
+          "win_rate": 0.5454545454545454
+        },
+        {
+          "threshold": 0.6,
+          "total_rows": 15724,
+          "selected_rows": 17,
+          "coverage": 0.0010811498346476724,
+          "precision": 0.7647058823529411,
+          "recall": 0.0016470290130495375,
+          "win_rate": 0.7647058823529411
+        },
+        {
+          "threshold": 0.62,
+          "total_rows": 15724,
+          "selected_rows": 3,
+          "coverage": 0.0001907911472907657,
+          "precision": 1.0,
+          "recall": 0.0003800836183960471,
+          "win_rate": 1.0
+        },
+        {
+          "threshold": 0.65,
+          "total_rows": 15724,
+          "selected_rows": 1,
+          "coverage": 6.35970490969219e-05,
+          "precision": 1.0,
+          "recall": 0.00012669453946534905,
+          "win_rate": 1.0
+        }
+      ]
+    },
+    "ETHUSDT": {
+      "rows": 15724,
+      "roc_auc": 0.5722531725536831,
+      "thresholds": [
+        {
+          "threshold": 0.5,
+          "total_rows": 15724,
+          "selected_rows": 8890,
+          "coverage": 0.5653777664716357,
+          "precision": 0.5444319460067492,
+          "recall": 0.6132792701469842,
+          "win_rate": 0.5444319460067492
+        },
+        {
+          "threshold": 0.52,
+          "total_rows": 15724,
+          "selected_rows": 5958,
+          "coverage": 0.3789112185194607,
+          "precision": 0.5607586438402148,
+          "recall": 0.42334009123162697,
+          "win_rate": 0.5607586438402148
+        },
+        {
+          "threshold": 0.54,
+          "total_rows": 15724,
+          "selected_rows": 2477,
+          "coverage": 0.15752989061307554,
+          "precision": 0.5837706903512313,
+          "recall": 0.18322351748606183,
+          "win_rate": 0.5837706903512313
+        },
+        {
+          "threshold": 0.56,
+          "total_rows": 15724,
+          "selected_rows": 671,
+          "coverage": 0.042673619944034596,
+          "precision": 0.639344262295082,
+          "recall": 0.05435884439939179,
+          "win_rate": 0.639344262295082
+        },
+        {
+          "threshold": 0.58,
+          "total_rows": 15724,
+          "selected_rows": 67,
+          "coverage": 0.004261002289493767,
+          "precision": 0.6567164179104478,
+          "recall": 0.005575266092245312,
+          "win_rate": 0.6567164179104478
+        },
+        {
+          "threshold": 0.6,
+          "total_rows": 15724,
+          "selected_rows": 4,
+          "coverage": 0.0002543881963876876,
+          "precision": 0.75,
+          "recall": 0.0003801317790167258,
+          "win_rate": 0.75
+        },
+        {
+          "threshold": 0.62,
+          "total_rows": 15724,
+          "selected_rows": 0,
+          "coverage": 0.0,
+          "precision": null,
+          "recall": 0.0,
+          "win_rate": null
+        },
+        {
+          "threshold": 0.65,
+          "total_rows": 15724,
+          "selected_rows": 0,
+          "coverage": 0.0,
+          "precision": null,
+          "recall": 0.0,
+          "win_rate": null
+        }
+      ]
+    },
+    "SOLUSDT": {
+      "rows": 15693,
+      "roc_auc": 0.5540324007269037,
+      "thresholds": [
+        {
+          "threshold": 0.5,
+          "total_rows": 15693,
+          "selected_rows": 8404,
+          "coverage": 0.5355253934875422,
+          "precision": 0.5434316991908615,
+          "recall": 0.5755513547574039,
+          "win_rate": 0.5434316991908615
+        },
+        {
+          "threshold": 0.52,
+          "total_rows": 15693,
+          "selected_rows": 5507,
+          "coverage": 0.35092079271012555,
+          "precision": 0.5494824768476484,
+          "recall": 0.3813484562066793,
+          "win_rate": 0.5494824768476484
+        },
+        {
+          "threshold": 0.54,
+          "total_rows": 15693,
+          "selected_rows": 2302,
+          "coverage": 0.14668960683107118,
+          "precision": 0.5673327541268463,
+          "recall": 0.1645872715816005,
+          "win_rate": 0.5673327541268463
+        },
+        {
+          "threshold": 0.56,
+          "total_rows": 15693,
+          "selected_rows": 638,
+          "coverage": 0.04065506913910661,
+          "precision": 0.5454545454545454,
+          "recall": 0.04385633270321361,
+          "win_rate": 0.5454545454545454
+        },
+        {
+          "threshold": 0.58,
+          "total_rows": 15693,
+          "selected_rows": 70,
+          "coverage": 0.004460587523099471,
+          "precision": 0.5142857142857142,
+          "recall": 0.004536862003780718,
+          "win_rate": 0.5142857142857142
+        },
+        {
+          "threshold": 0.6,
+          "total_rows": 15693,
+          "selected_rows": 5,
+          "coverage": 0.0003186133945071051,
+          "precision": 0.4,
+          "recall": 0.0002520478890989288,
+          "win_rate": 0.4
+        },
+        {
+          "threshold": 0.62,
+          "total_rows": 15693,
+          "selected_rows": 1,
+          "coverage": 6.372267890142101e-05,
+          "precision": 1.0,
+          "recall": 0.0001260239445494644,
+          "win_rate": 1.0
+        },
+        {
+          "threshold": 0.65,
+          "total_rows": 15693,
+          "selected_rows": 0,
+          "coverage": 0.0,
+          "precision": null,
+          "recall": 0.0,
+          "win_rate": null
+        }
+      ]
+    }
+  }
+}

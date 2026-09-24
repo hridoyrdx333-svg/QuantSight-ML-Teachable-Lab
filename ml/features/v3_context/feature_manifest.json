@@ -1,0 +1,35 @@
+{
+  "feature_version": "v3_context",
+  "generated_at_ms": 1790002203842,
+  "source_timeframe": "5m",
+  "features_added": [
+    "ADX",
+    "funding",
+    "mark divergence",
+    "index divergence",
+    "mark-index basis",
+    "BTC context",
+    "volatility regime",
+    "trend regime"
+  ],
+  "files": [
+    {
+      "symbol": "BTCUSDT",
+      "rows": 210240,
+      "segments": 1,
+      "path": "ml\\features\\v3_context\\BTCUSDT_5m.parquet"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "rows": 210208,
+      "segments": 31,
+      "path": "ml\\features\\v3_context\\ETHUSDT_5m.parquet"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "rows": 209893,
+      "segments": 54,
+      "path": "ml\\features\\v3_context\\SOLUSDT_5m.parquet"
+    }
+  ]
+}

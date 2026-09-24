@@ -1,0 +1,69 @@
+QuantSight V4 Major Audit - Fixed Package
+==============================================
+
+Scope audited:
+- collect_live.py
+- ml/build_features.py
+- ml/live_feature_builder.py
+- ml/shadow_runner.py
+- ml/promote_model.py
+- ml/export_for_quantsight.py
+- ui/app.py
+- ui/templates/index.html
+- training/config support files
+
+Confirmed major issues fixed:
+1. Shadow runner silent restart:
+   Existing shadow_state.json caused the latest start_ms to be skipped on restart.
+   First cycle now re-evaluates the latest feature row.
+
+2. Invalid shadow rows were incorrectly marked processed:
+   ERROR/NaN rows no longer advance the processed state, so repaired features can be retried.
+
+3. Parquet read/write race:
+   build_features.py now atomically replaces completed feature parquet files.
+   live_feature_builder.py now atomically replaces canonical 5m parquet.
+   shadow_runner.py retries transient parquet reads.
+
+4. Promotion path mismatch:
+   Trainer writes versioned candidates such as
+   v4_context_plus__random_forest.joblib.
+   promote_model.py now uses the same versioned naming.
+
+5. Export loader artifact mismatch:
+   Trainer stores the fitted estimator under artifact["model"].
+   The previous exported runtime expected artifact["pipeline"].
+   Export/runtime loader now uses artifact["model"] and validates the feature contract.
+
+6. Threshold/runtime contract:
+   Promotion copies V4.3 locked thresholds into model_contract.json when available.
+   Runtime remains FILTER_RANK_CONTEXT_ONLY with rule-based fallback and orders disabled.
+
+7. Frontend visibility:
+   Added Live Shadow status, BTC/ETH/SOL decision/probability/threshold/feature age,
+   V4 milestone progress, and Live Shadow Fresh readiness.
+   Status fetch now reports HTTP failures more clearly.
+
+Tests performed in audit environment:
+- All Python files compile successfully.
+- Synthetic promote -> export compatibility smoke test passed.
+- Generated runtime_loader.py compiles successfully.
+
+Not runtime-verified here because the uploaded audit ZIP intentionally excluded:
+- real parquet datasets
+- trained .joblib candidates
+- local .env/secrets
+- running Bybit/WebSocket processes
+
+Required local runtime verification:
+1. Keep collect_live.py running.
+2. Replace the fixed files into the project.
+3. Run live_feature_builder.py until a fresh V4 build completes, then stop it.
+4. Run shadow_runner.py.
+5. Confirm BTCUSDT/ETHUSDT/SOLUSDT print PASS/REJECT without feature errors.
+6. Start ML_LAB.bat and confirm the new Live Shadow Monitor populates.
+
+Important:
+- No live-order functionality was added.
+- Do not promote a model merely because the compatibility path is fixed.
+  Promotion remains an explicit user action.

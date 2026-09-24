@@ -1,0 +1,37 @@
+{
+  "symbols": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "SOLUSDT"
+  ],
+  "massive_tickers": {
+    "BTCUSDT": "X:BTCUSD",
+    "ETHUSDT": "X:ETHUSD",
+    "SOLUSDT": "X:SOLUSD"
+  },
+  "intervals": [
+    "5",
+    "15",
+    "60"
+  ],
+  "history_days": 730,
+  "massive": {
+    "base_url": "https://api.massive.com",
+    "source_timespan": "minute",
+    "source_multiplier": 1,
+    "chunk_days": 30,
+    "limit": 50000,
+    "min_seconds_between_calls": 12.5,
+    "request_timeout_seconds": 30
+  },
+  "bybit": {
+    "history_days": 365,
+    "category": "linear",
+    "rest_base": "https://api.bybit.com",
+    "ws_public_linear": "wss://stream.bybit.com/v5/public/linear",
+    "orderbook_depth": 50,
+    "orderbook_aggregate_seconds": 5,
+    "request_timeout_seconds": 20,
+    "request_sleep_seconds": 0.08
+  }
+}

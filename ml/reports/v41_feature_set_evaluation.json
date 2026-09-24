@@ -1,0 +1,692 @@
+{
+  "source_feature_version": "v4_context_plus",
+  "generated_at_unix": 1790077470.4017503,
+  "feature_sets": {
+    "full_41": [
+      "ret_1",
+      "ret_3",
+      "ret_6",
+      "ret_12",
+      "ema20_dist",
+      "ema50_dist",
+      "ema200_dist",
+      "rsi14",
+      "atr_pct",
+      "adx14",
+      "range_pct",
+      "body_pct",
+      "volume_z",
+      "realized_vol_12",
+      "realized_vol_48",
+      "trend_regime",
+      "high_vol_regime",
+      "funding_rate",
+      "funding_change",
+      "funding_abs",
+      "funding_z_30",
+      "funding_regime",
+      "mark_divergence",
+      "index_divergence",
+      "mark_index_basis",
+      "basis_change_1",
+      "basis_change_3",
+      "basis_z_48",
+      "btc_ret_1",
+      "btc_ret_6",
+      "btc_vol_12",
+      "btc_ema50_dist",
+      "btc_ret_1_lag1",
+      "btc_ret_1_lag3",
+      "btc_ret_1_lag6",
+      "btc_ret_6_lag1",
+      "btc_ret_6_lag3",
+      "btc_vol_12_lag1",
+      "symbol_is_btc",
+      "symbol_is_eth",
+      "symbol_is_sol"
+    ],
+    "top_15": [
+      "index_divergence",
+      "rsi14",
+      "mark_divergence",
+      "ema200_dist",
+      "btc_ema50_dist",
+      "ema50_dist",
+      "btc_vol_12",
+      "btc_vol_12_lag1",
+      "ema20_dist",
+      "realized_vol_48",
+      "ret_3",
+      "adx14",
+      "atr_pct",
+      "funding_change",
+      "realized_vol_12"
+    ],
+    "top_20": [
+      "index_divergence",
+      "rsi14",
+      "mark_divergence",
+      "ema200_dist",
+      "btc_ema50_dist",
+      "ema50_dist",
+      "btc_vol_12",
+      "btc_vol_12_lag1",
+      "ema20_dist",
+      "realized_vol_48",
+      "ret_3",
+      "adx14",
+      "atr_pct",
+      "funding_change",
+      "realized_vol_12",
+      "btc_ret_6_lag3",
+      "funding_z_30",
+      "btc_ret_6",
+      "ret_6",
+      "ret_12"
+    ],
+    "context_focused": [
+      "ret_1",
+      "ret_3",
+      "ret_6",
+      "ret_12",
+      "ema20_dist",
+      "ema50_dist",
+      "ema200_dist",
+      "rsi14",
+      "adx14",
+      "atr_pct",
+      "realized_vol_12",
+      "realized_vol_48",
+      "volume_z",
+      "funding_rate",
+      "funding_change",
+      "funding_abs",
+      "funding_z_30",
+      "funding_regime",
+      "mark_divergence",
+      "index_divergence",
+      "mark_index_basis",
+      "basis_change_1",
+      "basis_change_3",
+      "basis_z_48",
+      "btc_ret_1",
+      "btc_ret_6",
+      "btc_vol_12",
+      "btc_ema50_dist",
+      "btc_ret_1_lag1",
+      "btc_ret_1_lag3",
+      "btc_ret_1_lag6",
+      "btc_ret_6_lag1",
+      "btc_ret_6_lag3",
+      "btc_vol_12_lag1",
+      "symbol_is_btc",
+      "symbol_is_eth",
+      "symbol_is_sol"
+    ]
+  },
+  "evaluations": {
+    "full_41": {
+      "feature_count": 41,
+      "rows": 313911,
+      "folds": [
+        {
+          "rows": 47144,
+          "positive_rate": 0.4976243000169693,
+          "precision": 0.5282669138090825,
+          "recall": 0.5831202046035806,
+          "brier": 0.24818284965181073,
+          "roc_auc": 0.5482634597937925,
+          "log_loss": 0.6894967385264172,
+          "fold": 1,
+          "per_symbol": {
+            "BTCUSDT": {
+              "rows": 15725,
+              "positive_rate": 0.5034658187599365,
+              "precision": 0.535198453315137,
+              "recall": 0.5944170771756979,
+              "brier": 0.2481547091863094,
+              "roc_auc": 0.5483714264231152,
+              "log_loss": 0.6894342554936618
+            },
+            "ETHUSDT": {
+              "rows": 15694,
+              "positive_rate": 0.49910793933987513,
+              "precision": 0.5347349177330896,
+              "recall": 0.5974722328609728,
+              "brier": 0.2476035876889339,
+              "roc_auc": 0.5564719037187902,
+              "log_loss": 0.6883360763786186
+            },
+            "SOLUSDT": {
+              "rows": 15725,
+              "positive_rate": 0.49030206677265503,
+              "precision": 0.5141899173751646,
+              "recall": 0.5569390402075227,
+              "brier": 0.24878911013291702,
+              "roc_auc": 0.539582737619881,
+              "log_loss": 0.6907175955971727
+            }
+          }
+        },
+        {
+          "rows": 47175,
+          "positive_rate": 0.49248542660307365,
+          "precision": 0.5205673758865248,
+          "recall": 0.6318598545172814,
+          "brier": 0.24837306016229901,
+          "roc_auc": 0.54577327891031,
+          "log_loss": 0.6898825970294787,
+          "fold": 2,
+          "per_symbol": {
+            "BTCUSDT": {
+              "rows": 15725,
+              "positive_rate": 0.49329093799682033,
+              "precision": 0.5154144548795426,
+              "recall": 0.6508959649348975,
+              "brier": 0.24864214250764521,
+              "roc_auc": 0.5414068773482482,
+              "log_loss": 0.6904241276763817
+            },
+            "ETHUSDT": {
+              "rows": 15725,
+              "positive_rate": 0.4924006359300477,
+              "precision": 0.5277296360485269,
+              "recall": 0.6292134831460674,
+              "brier": 0.24772658397980873,
+              "roc_auc": 0.5545712063689213,
+              "log_loss": 0.6885777314950345
+            },
+            "SOLUSDT": {
+              "rows": 15725,
+              "positive_rate": 0.49176470588235294,
+              "precision": 0.5188617531617967,
+              "recall": 0.6154144575197207,
+              "brier": 0.24875045399944315,
+              "roc_auc": 0.5417280561306166,
+              "log_loss": 0.6906459319170198
+            }
+          }
+        },
+        {
+          "rows": 47141,
+          "positive_rate": 0.5031713370526718,
+          "precision": 0.5387056305807689,
+          "recall": 0.6155143338954469,
+          "brier": 0.24713762897062844,
+          "roc_auc": 0.5578307899981374,
+          "log_loss": 0.6873673014113917,
+          "fold": 3,
+          "per_symbol": {
+            "BTCUSDT": {
+              "rows": 15724,
+              "positive_rate": 0.5019715085220046,
+              "precision": 0.5265864445130104,
+              "recall": 0.6486760420625871,
+              "brier": 0.24795936492369047,
+              "roc_auc": 0.5461348434041093,
+              "log_loss": 0.6890130731393967
+            },
+            "ETHUSDT": {
+              "rows": 15724,
+              "positive_rate": 0.5019079114729077,
+              "precision": 0.5482594936708861,
+              "recall": 0.6146730866700456,
+              "brier": 0.24589265767758334,
+              "roc_auc": 0.572329939888184,
+              "log_loss": 0.6848453230194232
+            },
+            "SOLUSDT": {
+              "rows": 15693,
+              "positive_rate": 0.5056394570827758,
+              "precision": 0.5426093072324464,
+              "recall": 0.5833648393194707,
+              "brier": 0.24756170037099132,
+              "roc_auc": 0.5557090650007723,
+              "log_loss": 0.688245238936668
+            }
+          }
+        }
+      ],
+      "mean_roc_auc": 0.5506225095674133,
+      "min_roc_auc": 0.54577327891031,
+      "max_roc_auc": 0.5578307899981374,
+      "std_roc_auc": 0.005197417966906595,
+      "mean_brier": 0.2478978462615794,
+      "mean_log_loss": 0.6889155456557626
+    },
+    "top_15": {
+      "feature_count": 15,
+      "rows": 314871,
+      "folds": [
+        {
+          "rows": 47273,
+          "positive_rate": 0.4984240475535718,
+          "precision": 0.5296275840302982,
+          "recall": 0.569773363891011,
+          "brier": 0.24823139246192452,
+          "roc_auc": 0.5474050265273995,
+          "log_loss": 0.6895949273330549,
+          "fold": 1,
+          "per_symbol": {
+            "BTCUSDT": {
+              "rows": 15768,
+              "positive_rate": 0.5042491121258245,
+              "precision": 0.5368212537869961,
+              "recall": 0.5794239718274431,
+              "brier": 0.2482461230435162,
+              "roc_auc": 0.547754252825935,
+              "log_loss": 0.6896227043899876
+            },
+            "ETHUSDT": {
+              "rows": 15737,
+              "positive_rate": 0.5000317722564657,
+              "precision": 0.5365882078769517,
+              "recall": 0.5852077773541746,
+              "brier": 0.24769157252871785,
+              "roc_auc": 0.5544584836483901,
+              "log_loss": 0.6885099869010525
+            },
+            "SOLUSDT": {
+              "rows": 15768,
+              "positive_rate": 0.49099441907661084,
+              "precision": 0.5147849462365591,
+              "recall": 0.5441746318780677,
+              "brier": 0.24875542052371644,
+              "roc_auc": 0.5402652243036276,
+              "log_loss": 0.6906499577075292
+            }
+          }
+        },
+        {
+          "rows": 47304,
+          "positive_rate": 0.49148063588702856,
+          "precision": 0.5188123699707324,
+          "recall": 0.632844423416061,
+          "brier": 0.24861379347134166,
+          "roc_auc": 0.542581402915178,
+          "log_loss": 0.690365093782282,
+          "fold": 2,
+          "per_symbol": {
+            "BTCUSDT": {
+              "rows": 15768,
+              "positive_rate": 0.4927701674277017,
+              "precision": 0.5143234457537587,
+              "recall": 0.6516087516087516,
+              "brier": 0.24874193662915048,
+              "roc_auc": 0.5413235065523138,
+              "log_loss": 0.6906225384375858
+            },
+            "ETHUSDT": {
+              "rows": 15768,
+              "positive_rate": 0.491248097412481,
+              "precision": 0.5268298035773071,
+              "recall": 0.6198037696875807,
+              "brier": 0.24794355315570285,
+              "roc_auc": 0.5504296279731127,
+              "log_loss": 0.6890098655880371
+            },
+            "SOLUSDT": {
+              "rows": 15768,
+              "positive_rate": 0.4904236428209031,
+              "precision": 0.5157413316315678,
+              "recall": 0.6270528902107849,
+              "brier": 0.24915589062917165,
+              "roc_auc": 0.5367372845314744,
+              "log_loss": 0.6914628773212228
+            }
+          }
+        },
+        {
+          "rows": 47273,
+          "positive_rate": 0.5031413280307998,
+          "precision": 0.5360999747173764,
+          "recall": 0.6240487702333404,
+          "brier": 0.2472873627153059,
+          "roc_auc": 0.5558725249438802,
+          "log_loss": 0.6876693874498632,
+          "fold": 3,
+          "per_symbol": {
+            "BTCUSDT": {
+              "rows": 15768,
+              "positive_rate": 0.5016489091831557,
+              "precision": 0.526294780959984,
+              "recall": 0.6667509481668774,
+              "brier": 0.2480155711607271,
+              "roc_auc": 0.5477677736845442,
+              "log_loss": 0.6891305404166645
+            },
+            "ETHUSDT": {
+              "rows": 15768,
+              "positive_rate": 0.5018391679350583,
+              "precision": 0.5451727192205491,
+              "recall": 0.6222671553140402,
+              "brier": 0.24603734387002218,
+              "roc_auc": 0.5693409784300513,
+              "log_loss": 0.6851307669350027
+            },
+            "SOLUSDT": {
+              "rows": 15737,
+              "positive_rate": 0.5059414119590774,
+              "precision": 0.5379893444521658,
+              "recall": 0.5833961316252197,
+              "brier": 0.2478102010189872,
+              "roc_auc": 0.5517449848193711,
+              "log_loss": 0.6887489774795886
+            }
+          }
+        }
+      ],
+      "mean_roc_auc": 0.5486196514621526,
+      "min_roc_auc": 0.542581402915178,
+      "max_roc_auc": 0.5558725249438802,
+      "std_roc_auc": 0.005493630644941227,
+      "mean_brier": 0.24804418288285737,
+      "mean_log_loss": 0.6892098028550667
+    },
+    "top_20": {
+      "feature_count": 20,
+      "rows": 313911,
+      "folds": [
+        {
+          "rows": 47144,
+          "positive_rate": 0.4976243000169693,
+          "precision": 0.5282454458293384,
+          "recall": 0.5871270247229327,
+          "brier": 0.24832368913035277,
+          "roc_auc": 0.5472366983699701,
+          "log_loss": 0.6897848256519633,
+          "fold": 1,
+          "per_symbol": {
+            "BTCUSDT": {
+              "rows": 15725,
+              "positive_rate": 0.5034658187599365,
+              "precision": 0.5353558136912147,
+              "recall": 0.5995958064923582,
+              "brier": 0.24828629733511862,
+              "roc_auc": 0.5479886934010026,
+              "log_loss": 0.6897080207056854
+            },
+            "ETHUSDT": {
+              "rows": 15694,
+              "positive_rate": 0.49910793933987513,
+              "precision": 0.5347514503469457,
+              "recall": 0.6001531980084259,
+              "brier": 0.24785837857786985,
+              "roc_auc": 0.553325540262443,
+              "log_loss": 0.6888509449859115
+            },
+            "SOLUSDT": {
+              "rows": 15725,
+              "positive_rate": 0.49030206677265503,
+              "precision": 0.5139598431745277,
+              "recall": 0.5610894941634241,
+              "brier": 0.24882547417268813,
+              "roc_auc": 0.5403790881720638,
+              "log_loss": 0.6907936702276855
+            }
+          }
+        },
+        {
+          "rows": 47175,
+          "positive_rate": 0.49248542660307365,
+          "precision": 0.5200380000703705,
+          "recall": 0.6361640769594973,
+          "brier": 0.24852853105314854,
+          "roc_auc": 0.5442295782146415,
+          "log_loss": 0.6901976303961781,
+          "fold": 2,
+          "per_symbol": {
+            "BTCUSDT": {
+              "rows": 15725,
+              "positive_rate": 0.49329093799682033,
+              "precision": 0.5160414361862616,
+              "recall": 0.6614670620085085,
+              "brier": 0.24871857750736756,
+              "roc_auc": 0.5410373607359696,
+              "log_loss": 0.6905775496968097
+            },
+            "ETHUSDT": {
+              "rows": 15725,
+              "positive_rate": 0.4924006359300477,
+              "precision": 0.5274533347887785,
+              "recall": 0.6240475267983986,
+              "brier": 0.2478948431340656,
+              "roc_auc": 0.5523626014661103,
+              "log_loss": 0.6889189109294788
+            },
+            "SOLUSDT": {
+              "rows": 15725,
+              "positive_rate": 0.49176470588235294,
+              "precision": 0.5170119137061285,
+              "recall": 0.6229147808095177,
+              "brier": 0.24897217251801243,
+              "roc_auc": 0.54000793758973,
+              "log_loss": 0.6910964305622457
+            }
+          }
+        },
+        {
+          "rows": 47141,
+          "positive_rate": 0.5031713370526718,
+          "precision": 0.5358487806661548,
+          "recall": 0.6178752107925801,
+          "brier": 0.2473630771595422,
+          "roc_auc": 0.5552376803567632,
+          "log_loss": 0.6878246765454419,
+          "fold": 3,
+          "per_symbol": {
+            "BTCUSDT": {
+              "rows": 15724,
+              "positive_rate": 0.5019715085220046,
+              "precision": 0.525996358486749,
+              "recall": 0.6588116052198151,
+              "brier": 0.24811351260736114,
+              "roc_auc": 0.5463155258989055,
+              "log_loss": 0.6893288913580154
+            },
+            "ETHUSDT": {
+              "rows": 15724,
+              "positive_rate": 0.5019079114729077,
+              "precision": 0.5435172723194257,
+              "recall": 0.6140395337050177,
+              "brier": 0.24614394551328492,
+              "roc_auc": 0.5688796324435031,
+              "log_loss": 0.6853547703101814
+            },
+            "SOLUSDT": {
+              "rows": 15693,
+              "positive_rate": 0.5056394570827758,
+              "precision": 0.5392443560650368,
+              "recall": 0.5809703843730308,
+              "brier": 0.24783269922187853,
+              "roc_auc": 0.5516974327210337,
+              "log_loss": 0.6887922755979063
+            }
+          }
+        }
+      ],
+      "mean_roc_auc": 0.5489013189804584,
+      "min_roc_auc": 0.5442295782146415,
+      "max_roc_auc": 0.5552376803567632,
+      "std_roc_auc": 0.004645628735739506,
+      "mean_brier": 0.2480717657810145,
+      "mean_log_loss": 0.6892690441978612
+    },
+    "context_focused": {
+      "feature_count": 37,
+      "rows": 313911,
+      "folds": [
+        {
+          "rows": 47144,
+          "positive_rate": 0.4976243000169693,
+          "precision": 0.5268423062237495,
+          "recall": 0.588150042625746,
+          "brier": 0.24828545905068702,
+          "roc_auc": 0.5467261594944404,
+          "log_loss": 0.689701632943842,
+          "fold": 1,
+          "per_symbol": {
+            "BTCUSDT": {
+              "rows": 15725,
+              "positive_rate": 0.5034658187599365,
+              "precision": 0.5360894611995933,
+              "recall": 0.5994694960212201,
+              "brier": 0.24820664851837643,
+              "roc_auc": 0.5477753503562577,
+              "log_loss": 0.6895385602742005
+            },
+            "ETHUSDT": {
+              "rows": 15694,
+              "positive_rate": 0.49910793933987513,
+              "precision": 0.5319603871258158,
+              "recall": 0.6034724881909869,
+              "brier": 0.2477373513220314,
+              "roc_auc": 0.5543436772195982,
+              "log_loss": 0.6886022649718307
+            },
+            "SOLUSDT": {
+              "rows": 15725,
+              "positive_rate": 0.49030206677265503,
+              "precision": 0.5117737545852562,
+              "recall": 0.5609597924773022,
+              "brier": 0.2489112967813137,
+              "roc_auc": 0.537886339896093,
+              "log_loss": 0.6909619063100014
+            }
+          }
+        },
+        {
+          "rows": 47175,
+          "positive_rate": 0.49248542660307365,
+          "precision": 0.5195954930366016,
+          "recall": 0.6391339904446262,
+          "brier": 0.24848743253908503,
+          "roc_auc": 0.5443728281739768,
+          "log_loss": 0.6901118569482829,
+          "fold": 2,
+          "per_symbol": {
+            "BTCUSDT": {
+              "rows": 15725,
+              "positive_rate": 0.49329093799682033,
+              "precision": 0.5156546964089227,
+              "recall": 0.6645610416398092,
+              "brier": 0.24871972525848557,
+              "roc_auc": 0.5401681011787255,
+              "log_loss": 0.6905775958408813
+            },
+            "ETHUSDT": {
+              "rows": 15725,
+              "positive_rate": 0.4924006359300477,
+              "precision": 0.5261234143195012,
+              "recall": 0.6320547591372853,
+              "brier": 0.24793154367767956,
+              "roc_auc": 0.5518492256550505,
+              "log_loss": 0.6889917981405206
+            },
+            "SOLUSDT": {
+              "rows": 15725,
+              "positive_rate": 0.49176470588235294,
+              "precision": 0.5172971225347559,
+              "recall": 0.6207164101900944,
+              "brier": 0.24881102868109,
+              "roc_auc": 0.5414213677015953,
+              "log_loss": 0.6907661768634468
+            }
+          }
+        },
+        {
+          "rows": 47141,
+          "positive_rate": 0.5031713370526718,
+          "precision": 0.5370776656428258,
+          "recall": 0.6192242833052276,
+          "brier": 0.24717208237533284,
+          "roc_auc": 0.556967914743064,
+          "log_loss": 0.6874376889231728,
+          "fold": 3,
+          "per_symbol": {
+            "BTCUSDT": {
+              "rows": 15724,
+              "positive_rate": 0.5019715085220046,
+              "precision": 0.5279578606158833,
+              "recall": 0.6603319396933992,
+              "brier": 0.24793984491928772,
+              "roc_auc": 0.5470736708119288,
+              "log_loss": 0.6889723899089847
+            },
+            "ETHUSDT": {
+              "rows": 15724,
+              "positive_rate": 0.5019079114729077,
+              "precision": 0.5439049007513738,
+              "recall": 0.61454637607704,
+              "brier": 0.24602571429488,
+              "roc_auc": 0.5701034121518953,
+              "log_loss": 0.6851163532157344
+            },
+            "SOLUSDT": {
+              "rows": 15693,
+              "positive_rate": 0.5056394570827758,
+              "precision": 0.5404837013669821,
+              "recall": 0.5829867674858223,
+              "brier": 0.2475514358103609,
+              "roc_auc": 0.5547164680546844,
+              "log_loss": 0.6882258775654246
+            }
+          }
+        }
+      ],
+      "mean_roc_auc": 0.5493556341371604,
+      "min_roc_auc": 0.5443728281739768,
+      "max_roc_auc": 0.556967914743064,
+      "std_roc_auc": 0.005467763350964785,
+      "mean_brier": 0.24798165798836833,
+      "mean_log_loss": 0.689083726271766
+    }
+  },
+  "comparison": [
+    {
+      "feature_set": "full_41",
+      "feature_count": 41,
+      "rows": 313911,
+      "mean_roc_auc": 0.5506225095674133,
+      "min_roc_auc": 0.54577327891031,
+      "max_roc_auc": 0.5578307899981374,
+      "std_roc_auc": 0.005197417966906595,
+      "mean_brier": 0.2478978462615794,
+      "mean_log_loss": 0.6889155456557626
+    },
+    {
+      "feature_set": "context_focused",
+      "feature_count": 37,
+      "rows": 313911,
+      "mean_roc_auc": 0.5493556341371604,
+      "min_roc_auc": 0.5443728281739768,
+      "max_roc_auc": 0.556967914743064,
+      "std_roc_auc": 0.005467763350964785,
+      "mean_brier": 0.24798165798836833,
+      "mean_log_loss": 0.689083726271766
+    },
+    {
+      "feature_set": "top_20",
+      "feature_count": 20,
+      "rows": 313911,
+      "mean_roc_auc": 0.5489013189804584,
+      "min_roc_auc": 0.5442295782146415,
+      "max_roc_auc": 0.5552376803567632,
+      "std_roc_auc": 0.004645628735739506,
+      "mean_brier": 0.2480717657810145,
+      "mean_log_loss": 0.6892690441978612
+    },
+    {
+      "feature_set": "top_15",
+      "feature_count": 15,
+      "rows": 314871,
+      "mean_roc_auc": 0.5486196514621526,
+      "min_roc_auc": 0.542581402915178,
+      "max_roc_auc": 0.5558725249438802,
+      "std_roc_auc": 0.005493630644941227,
+      "mean_brier": 0.24804418288285737,
+      "mean_log_loss": 0.6892098028550667
+    }
+  ],
+  "elapsed_seconds": 426.83
+}

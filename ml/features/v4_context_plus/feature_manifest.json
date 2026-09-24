@@ -1,0 +1,38 @@
+{
+  "feature_version": "v4_context_plus",
+  "generated_at_ms": 1790197758357,
+  "source_timeframe": "5m",
+  "label_horizon_bars": 6,
+  "gap_policy": "features and labels are calculated inside contiguous 5m segments only",
+  "funding_policy": "backward asof only",
+  "orderbook_in_training": false,
+  "files": [
+    {
+      "symbol": "BTCUSDT",
+      "rows": 210882,
+      "segments": 7,
+      "funding_non_null": 105570,
+      "basis_non_null": 105459,
+      "btc_lag_non_null": 210843,
+      "path": "ml\\features\\v4_context_plus\\BTCUSDT_5m.parquet"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "rows": 210850,
+      "segments": 37,
+      "funding_non_null": 105563,
+      "basis_non_null": 105452,
+      "btc_lag_non_null": 210811,
+      "path": "ml\\features\\v4_context_plus\\ETHUSDT_5m.parquet"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "rows": 210535,
+      "segments": 60,
+      "funding_non_null": 105559,
+      "basis_non_null": 105448,
+      "btc_lag_non_null": 210496,
+      "path": "ml\\features\\v4_context_plus\\SOLUSDT_5m.parquet"
+    }
+  ]
+}

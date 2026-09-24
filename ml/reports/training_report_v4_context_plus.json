@@ -1,0 +1,118 @@
+{
+  "feature_version": "v4_context_plus",
+  "target": "label_up_6",
+  "label_horizon_bars": 6,
+  "bar_ms": 300000,
+  "purge_ms": 1800000,
+  "features": [
+    "ret_1",
+    "ret_3",
+    "ret_6",
+    "ret_12",
+    "ema20_dist",
+    "ema50_dist",
+    "ema200_dist",
+    "rsi14",
+    "atr_pct",
+    "adx14",
+    "range_pct",
+    "body_pct",
+    "volume_z",
+    "realized_vol_12",
+    "realized_vol_48",
+    "trend_regime",
+    "high_vol_regime",
+    "funding_rate",
+    "funding_change",
+    "funding_abs",
+    "funding_z_30",
+    "funding_regime",
+    "mark_divergence",
+    "index_divergence",
+    "mark_index_basis",
+    "basis_change_1",
+    "basis_change_3",
+    "basis_z_48",
+    "btc_ret_1",
+    "btc_ret_6",
+    "btc_vol_12",
+    "btc_ema50_dist",
+    "btc_ret_1_lag1",
+    "btc_ret_1_lag3",
+    "btc_ret_1_lag6",
+    "btc_ret_6_lag1",
+    "btc_ret_6_lag3",
+    "btc_vol_12_lag1",
+    "symbol_is_btc",
+    "symbol_is_eth",
+    "symbol_is_sol"
+  ],
+  "missing_optional_features": [],
+  "rows": {
+    "all": 313911,
+    "train": 219580,
+    "validation": 47154,
+    "test": 47141
+  },
+  "split": {
+    "method": "chronological_70_15_15_with_purge",
+    "train_boundary_ms": 1780512600000,
+    "validation_boundary_ms": 1785229800000,
+    "purge_bars": 6
+  },
+  "models": {
+    "logistic": {
+      "validation": {
+        "precision": 0.514693036094902,
+        "recall": 0.6344215694719614,
+        "brier": 0.24902845813227856,
+        "roc_auc": 0.538881379503755,
+        "log_loss": 0.691204129886779
+      },
+      "test": {
+        "precision": 0.5436527509977132,
+        "recall": 0.5111298482293424,
+        "brier": 0.2475645507117031,
+        "roc_auc": 0.5564627973641504,
+        "log_loss": 0.6882575446357907
+      },
+      "artifact": "D:\\QuantSight-ML-Teachable-Lab\\QuantSight-ML-Teachable-Lab\\ml\\models\\candidate\\v4_context_plus__logistic.joblib"
+    },
+    "random_forest": {
+      "validation": {
+        "precision": 0.5204215606259537,
+        "recall": 0.6316650874321647,
+        "brier": 0.24837884693905232,
+        "roc_auc": 0.5456906425000795,
+        "log_loss": 0.6898941893214883
+      },
+      "test": {
+        "precision": 0.5387830589975957,
+        "recall": 0.6140809443507589,
+        "brier": 0.24713231567473248,
+        "roc_auc": 0.5586174825593238,
+        "log_loss": 0.6873596113065404
+      },
+      "artifact": "D:\\QuantSight-ML-Teachable-Lab\\QuantSight-ML-Teachable-Lab\\ml\\models\\candidate\\v4_context_plus__random_forest.joblib"
+    },
+    "hist_gradient_boosting": {
+      "validation": {
+        "precision": 0.5198341550874047,
+        "recall": 0.5994056335601688,
+        "brier": 0.24889206510703807,
+        "roc_auc": 0.5420338859521678,
+        "log_loss": 0.6909453117844213
+      },
+      "test": {
+        "precision": 0.5344285771112613,
+        "recall": 0.5663996627318718,
+        "brier": 0.24891686886237388,
+        "roc_auc": 0.5452309018016361,
+        "log_loss": 0.6910565008570204
+      },
+      "artifact": "D:\\QuantSight-ML-Teachable-Lab\\QuantSight-ML-Teachable-Lab\\ml\\models\\candidate\\v4_context_plus__hist_gradient_boosting.joblib"
+    }
+  },
+  "elapsed_seconds": 73.12,
+  "auto_promoted": false
+}

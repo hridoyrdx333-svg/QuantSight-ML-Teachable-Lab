@@ -1,0 +1,899 @@
+{
+  "phase": 1,
+  "generated_at_ms": 1790002192143,
+  "historical": [
+    {
+      "path": "data\\raw\\trade_kline\\BTCUSDT\\5.parquet",
+      "symbol": "BTCUSDT",
+      "interval": "5",
+      "exists": true,
+      "status": "PASS",
+      "issues": [],
+      "rows": 210240,
+      "sha256": "4f4f7170a557fac0957371e419f840e5d128f7da8329f3347eed377c3cbdf652",
+      "duplicates": 0,
+      "bad_ohlc": 0,
+      "incomplete_candles": 0,
+      "gap_count_capped": 0,
+      "gap_examples": [],
+      "start_ms": 1726790400000,
+      "end_ms": 1789862100000
+    },
+    {
+      "path": "data\\raw\\trade_kline\\BTCUSDT\\15.parquet",
+      "symbol": "BTCUSDT",
+      "interval": "15",
+      "exists": true,
+      "status": "PASS",
+      "issues": [],
+      "rows": 70080,
+      "sha256": "17fb7c071cf96908529ae1dc4fc39d7b6d3a785e37e425dafa3d49d4af46777e",
+      "duplicates": 0,
+      "bad_ohlc": 0,
+      "incomplete_candles": 0,
+      "gap_count_capped": 0,
+      "gap_examples": [],
+      "start_ms": 1726790400000,
+      "end_ms": 1789861500000
+    },
+    {
+      "path": "data\\raw\\trade_kline\\BTCUSDT\\60.parquet",
+      "symbol": "BTCUSDT",
+      "interval": "60",
+      "exists": true,
+      "status": "PASS",
+      "issues": [],
+      "rows": 17520,
+      "sha256": "c33cae5dbc93e6fa9bc7b386465cea8d41833840ac6b5bf9318ef0e1ba2ad568",
+      "duplicates": 0,
+      "bad_ohlc": 0,
+      "incomplete_candles": 0,
+      "gap_count_capped": 0,
+      "gap_examples": [],
+      "start_ms": 1726790400000,
+      "end_ms": 1789858800000
+    },
+    {
+      "path": "data\\raw\\trade_kline\\ETHUSDT\\5.parquet",
+      "symbol": "ETHUSDT",
+      "interval": "5",
+      "exists": true,
+      "status": "CHECK",
+      "issues": [
+        "missing_interval_gaps_detected:30"
+      ],
+      "rows": 210208,
+      "sha256": "ebe396a17e5d2ef162beb8b20a28ff48ac30294163bc975e82bfd37a810ba3c5",
+      "duplicates": 0,
+      "bad_ohlc": 0,
+      "incomplete_candles": 0,
+      "gap_count_capped": 30,
+      "gap_examples": [
+        {
+          "previous_ms": 1729960500000,
+          "current_ms": 1729961100000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1729961400000,
+          "current_ms": 1729962000000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735786200000,
+          "current_ms": 1735786800000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735788000000,
+          "current_ms": 1735788600000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735795200000,
+          "current_ms": 1735795800000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735799700000,
+          "current_ms": 1735800300000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735801500000,
+          "current_ms": 1735802400000,
+          "difference_ms": 900000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735803300000,
+          "current_ms": 1735803900000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735803900000,
+          "current_ms": 1735804500000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735804800000,
+          "current_ms": 1735805400000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735818900000,
+          "current_ms": 1735819500000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735836600000,
+          "current_ms": 1735837200000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735843500000,
+          "current_ms": 1735844400000,
+          "difference_ms": 900000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735853100000,
+          "current_ms": 1735853700000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735854000000,
+          "current_ms": 1735854600000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735855200000,
+          "current_ms": 1735855800000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735860900000,
+          "current_ms": 1735861500000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1743199500000,
+          "current_ms": 1743200100000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1743200100000,
+          "current_ms": 1743200700000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1743200700000,
+          "current_ms": 1743201300000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        }
+      ],
+      "start_ms": 1726790400000,
+      "end_ms": 1789862100000
+    },
+    {
+      "path": "data\\raw\\trade_kline\\ETHUSDT\\15.parquet",
+      "symbol": "ETHUSDT",
+      "interval": "15",
+      "exists": true,
+      "status": "CHECK",
+      "issues": [
+        "missing_interval_gaps_detected:20"
+      ],
+      "rows": 70049,
+      "sha256": "6ff608c83586c80928047e3edfc8ba9319cf509be5536fdd1c9b1b7602b5a469",
+      "duplicates": 0,
+      "bad_ohlc": 0,
+      "incomplete_candles": 0,
+      "gap_count_capped": 20,
+      "gap_examples": [
+        {
+          "previous_ms": 1729959300000,
+          "current_ms": 1729962000000,
+          "difference_ms": 2700000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1735785000000,
+          "current_ms": 1735786800000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1735786800000,
+          "current_ms": 1735788600000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1735794000000,
+          "current_ms": 1735795800000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1735798500000,
+          "current_ms": 1735800300000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1735800300000,
+          "current_ms": 1735805700000,
+          "difference_ms": 5400000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1735818300000,
+          "current_ms": 1735820100000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1735835400000,
+          "current_ms": 1735837200000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1735842600000,
+          "current_ms": 1735844400000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1735852500000,
+          "current_ms": 1735856100000,
+          "difference_ms": 3600000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1735859700000,
+          "current_ms": 1735861500000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1743198300000,
+          "current_ms": 1743203700000,
+          "difference_ms": 5400000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1743204600000,
+          "current_ms": 1743206400000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1761409800000,
+          "current_ms": 1761411600000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1761412500000,
+          "current_ms": 1761414300000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1762928100000,
+          "current_ms": 1762929900000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1762930800000,
+          "current_ms": 1762932600000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1767274200000,
+          "current_ms": 1767276000000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1767526200000,
+          "current_ms": 1767528000000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1778214600000,
+          "current_ms": 1778216400000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        }
+      ],
+      "start_ms": 1726790400000,
+      "end_ms": 1789861500000
+    },
+    {
+      "path": "data\\raw\\trade_kline\\ETHUSDT\\60.parquet",
+      "symbol": "ETHUSDT",
+      "interval": "60",
+      "exists": true,
+      "status": "CHECK",
+      "issues": [
+        "missing_interval_gaps_detected:13"
+      ],
+      "rows": 17498,
+      "sha256": "bcec61b327718efecdc6d18fe20eb1c094f62fd00f75a32d9429d660de1e3e4f",
+      "duplicates": 0,
+      "bad_ohlc": 0,
+      "incomplete_candles": 0,
+      "gap_count_capped": 13,
+      "gap_examples": [
+        {
+          "previous_ms": 1729954800000,
+          "current_ms": 1729962000000,
+          "difference_ms": 7200000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1735779600000,
+          "current_ms": 1735790400000,
+          "difference_ms": 10800000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1735790400000,
+          "current_ms": 1735808400000,
+          "difference_ms": 18000000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1735815600000,
+          "current_ms": 1735822800000,
+          "difference_ms": 7200000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1735830000000,
+          "current_ms": 1735837200000,
+          "difference_ms": 7200000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1735837200000,
+          "current_ms": 1735844400000,
+          "difference_ms": 7200000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1735848000000,
+          "current_ms": 1735862400000,
+          "difference_ms": 14400000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1743195600000,
+          "current_ms": 1743206400000,
+          "difference_ms": 10800000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1761404400000,
+          "current_ms": 1761415200000,
+          "difference_ms": 10800000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1762923600000,
+          "current_ms": 1762934400000,
+          "difference_ms": 10800000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1767268800000,
+          "current_ms": 1767276000000,
+          "difference_ms": 7200000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1767520800000,
+          "current_ms": 1767528000000,
+          "difference_ms": 7200000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1778209200000,
+          "current_ms": 1778216400000,
+          "difference_ms": 7200000,
+          "expected_ms": 3600000
+        }
+      ],
+      "start_ms": 1726790400000,
+      "end_ms": 1789858800000
+    },
+    {
+      "path": "data\\raw\\trade_kline\\SOLUSDT\\5.parquet",
+      "symbol": "SOLUSDT",
+      "interval": "5",
+      "exists": true,
+      "status": "CHECK",
+      "issues": [
+        "missing_interval_gaps_detected:53"
+      ],
+      "rows": 209893,
+      "sha256": "f4ed3b2c7777f6b813ea7c0bffca92a73858c7ead261707325b316a64e24ed59",
+      "duplicates": 0,
+      "bad_ohlc": 0,
+      "incomplete_candles": 0,
+      "gap_count_capped": 53,
+      "gap_examples": [
+        {
+          "previous_ms": 1729957500000,
+          "current_ms": 1729958100000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1729959000000,
+          "current_ms": 1729959600000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1729960200000,
+          "current_ms": 1729960800000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1729961100000,
+          "current_ms": 1729962000000,
+          "difference_ms": 900000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1729962000000,
+          "current_ms": 1729962600000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1729962600000,
+          "current_ms": 1729963200000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1733280600000,
+          "current_ms": 1733281200000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1733300400000,
+          "current_ms": 1733301000000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1733301000000,
+          "current_ms": 1733301600000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1733304900000,
+          "current_ms": 1733305500000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1733306400000,
+          "current_ms": 1733307000000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735776300000,
+          "current_ms": 1735776900000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735789200000,
+          "current_ms": 1735789800000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735807500000,
+          "current_ms": 1735808100000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735816500000,
+          "current_ms": 1735817100000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735818900000,
+          "current_ms": 1735819500000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735821000000,
+          "current_ms": 1735821600000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735826700000,
+          "current_ms": 1735827300000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735827300000,
+          "current_ms": 1735827900000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        },
+        {
+          "previous_ms": 1735842600000,
+          "current_ms": 1735843200000,
+          "difference_ms": 600000,
+          "expected_ms": 300000
+        }
+      ],
+      "start_ms": 1726790400000,
+      "end_ms": 1789862100000
+    },
+    {
+      "path": "data\\raw\\trade_kline\\SOLUSDT\\15.parquet",
+      "symbol": "SOLUSDT",
+      "interval": "15",
+      "exists": true,
+      "status": "CHECK",
+      "issues": [
+        "missing_interval_gaps_detected:42"
+      ],
+      "rows": 69932,
+      "sha256": "e2615f6a35b58062179cd029051dc40d6e1b242536bd719b6944729cbfdb6581",
+      "duplicates": 0,
+      "bad_ohlc": 0,
+      "incomplete_candles": 0,
+      "gap_count_capped": 42,
+      "gap_examples": [
+        {
+          "previous_ms": 1729956600000,
+          "current_ms": 1729958400000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1729958400000,
+          "current_ms": 1729963800000,
+          "difference_ms": 5400000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1733279400000,
+          "current_ms": 1733281200000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1733299200000,
+          "current_ms": 1733301900000,
+          "difference_ms": 2700000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1733303700000,
+          "current_ms": 1733305500000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1733305500000,
+          "current_ms": 1733307300000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1735775100000,
+          "current_ms": 1735776900000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1735788600000,
+          "current_ms": 1735790400000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1735806600000,
+          "current_ms": 1735808400000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1735815600000,
+          "current_ms": 1735817400000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1735818300000,
+          "current_ms": 1735820100000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1735820100000,
+          "current_ms": 1735821900000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1735825500000,
+          "current_ms": 1735828200000,
+          "difference_ms": 2700000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1735841700000,
+          "current_ms": 1735843500000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1735846200000,
+          "current_ms": 1735848000000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1735852500000,
+          "current_ms": 1735854300000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1738717200000,
+          "current_ms": 1738719000000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1738729800000,
+          "current_ms": 1738731600000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1738731600000,
+          "current_ms": 1738733400000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        },
+        {
+          "previous_ms": 1738736100000,
+          "current_ms": 1738737900000,
+          "difference_ms": 1800000,
+          "expected_ms": 900000
+        }
+      ],
+      "start_ms": 1726790400000,
+      "end_ms": 1789861500000
+    },
+    {
+      "path": "data\\raw\\trade_kline\\SOLUSDT\\60.parquet",
+      "symbol": "SOLUSDT",
+      "interval": "60",
+      "exists": true,
+      "status": "CHECK",
+      "issues": [
+        "missing_interval_gaps_detected:25"
+      ],
+      "rows": 17456,
+      "sha256": "96344fd39c753a08ed9502bcbbccef1c5da9a31e04a282017afd1ecfb125fe4a",
+      "duplicates": 0,
+      "bad_ohlc": 0,
+      "incomplete_candles": 0,
+      "gap_count_capped": 25,
+      "gap_examples": [
+        {
+          "previous_ms": 1729951200000,
+          "current_ms": 1729965600000,
+          "difference_ms": 14400000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1733274000000,
+          "current_ms": 1733281200000,
+          "difference_ms": 7200000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1733295600000,
+          "current_ms": 1733310000000,
+          "difference_ms": 14400000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1735772400000,
+          "current_ms": 1735779600000,
+          "difference_ms": 7200000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1735783200000,
+          "current_ms": 1735790400000,
+          "difference_ms": 7200000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1735801200000,
+          "current_ms": 1735808400000,
+          "difference_ms": 7200000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1735812000000,
+          "current_ms": 1735822800000,
+          "difference_ms": 10800000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1735822800000,
+          "current_ms": 1735830000000,
+          "difference_ms": 7200000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1735837200000,
+          "current_ms": 1735848000000,
+          "difference_ms": 10800000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1735848000000,
+          "current_ms": 1735855200000,
+          "difference_ms": 7200000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1738713600000,
+          "current_ms": 1738720800000,
+          "difference_ms": 7200000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1738724400000,
+          "current_ms": 1738753200000,
+          "difference_ms": 28800000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1738753200000,
+          "current_ms": 1738764000000,
+          "difference_ms": 10800000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1738792800000,
+          "current_ms": 1738800000000,
+          "difference_ms": 7200000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1742857200000,
+          "current_ms": 1742947200000,
+          "difference_ms": 90000000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1743195600000,
+          "current_ms": 1743206400000,
+          "difference_ms": 10800000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1761411600000,
+          "current_ms": 1761422400000,
+          "difference_ms": 10800000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1762909200000,
+          "current_ms": 1762916400000,
+          "difference_ms": 7200000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1762916400000,
+          "current_ms": 1762927200000,
+          "difference_ms": 10800000,
+          "expected_ms": 3600000
+        },
+        {
+          "previous_ms": 1762927200000,
+          "current_ms": 1762934400000,
+          "difference_ms": 7200000,
+          "expected_ms": 3600000
+        }
+      ],
+      "start_ms": 1726790400000,
+      "end_ms": 1789858800000
+    }
+  ],
+  "funding": [
+    {
+      "path": "data\\raw\\funding\\BTCUSDT\\funding.parquet",
+      "symbol": "BTCUSDT",
+      "exists": true,
+      "status": "PASS",
+      "issues": [],
+      "rows": 1095,
+      "sha256": "a4971f1e75e972968464b45bf4eb051771ff2a6f606dc151012c795abfe388b9",
+      "duplicates": 0,
+      "start_ms": 1758384000000,
+      "end_ms": 1789891200000
+    },
+    {
+      "path": "data\\raw\\funding\\ETHUSDT\\funding.parquet",
+      "symbol": "ETHUSDT",
+      "exists": true,
+      "status": "PASS",
+      "issues": [],
+      "rows": 1095,
+      "sha256": "cf70a2dd6e5bec2ed164bd216e2bad22e7de10cbf839124d76f94711b64607c4",
+      "duplicates": 0,
+      "start_ms": 1758384000000,
+      "end_ms": 1789891200000
+    },
+    {
+      "path": "data\\raw\\funding\\SOLUSDT\\funding.parquet",
+      "symbol": "SOLUSDT",
+      "exists": true,
+      "status": "PASS",
+      "issues": [],
+      "rows": 1095,
+      "sha256": "81784880c0ad2f7b9750aae5fc33ccef9956dc25d9447bc8a8f66646eadcced0",
+      "duplicates": 0,
+      "start_ms": 1758384000000,
+      "end_ms": 1789891200000
+    }
+  ],
+  "summary": {
+    "pass": 6,
+    "check": 6,
+    "fail": 0,
+    "overall": "CHECK"
+  }
+}

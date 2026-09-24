@@ -1,0 +1,40 @@
+QuantSight V4 Audit Fixed v2
+==============================
+
+SAFETY CHANGE FROM v1
+- config.json is intentionally NOT included.
+- .env, secrets, data, trained models, reports, and runtime state are NOT included.
+- This package only replaces audited code/UI files.
+
+Before replacement
+------------------
+STOP:
+- collect_live.py
+- live_feature_builder.py
+- shadow_runner.py
+- ML Lab frontend
+
+Recommended backup from project root:
+PowerShell:
+  Copy-Item .\collect_live.py .\collect_live.py.pre_v4fix -Force
+  Copy-Item .\ml\build_features.py .\ml\build_features.py.pre_v4fix -Force
+  Copy-Item .\ml\live_feature_builder.py .\ml\live_feature_builder.py.pre_v4fix -Force
+  Copy-Item .\ml\shadow_runner.py .\ml\shadow_runner.py.pre_v4fix -Force
+  Copy-Item .\ml\promote_model.py .\ml\promote_model.py.pre_v4fix -Force
+  Copy-Item .\ml\export_for_quantsight.py .\ml\export_for_quantsight.py.pre_v4fix -Force
+  Copy-Item .\ui\app.py .\ui\app.py.pre_v4fix -Force
+  Copy-Item .\ui\templates\index.html .\ui\templates\index.html.pre_v4fix -Force
+  Copy-Item .\ui\static\style.css .\ui\static\style.css.pre_v4fix -Force
+
+Then extract this ZIP into the existing project root with -Force.
+
+Local runtime verification order
+--------------------------------
+1. Syntax compile.
+2. Start collect_live.py and KEEP RUNNING.
+3. Start live_feature_builder.py; wait for a fresh V4 build; STOP it.
+4. Start shadow_runner.py and verify BTC/ETH/SOL produce PASS/REJECT without feature errors.
+5. Start ML_LAB.bat and verify Live Shadow Monitor / V4 Progress.
+
+Do NOT promote a model just because the runtime path works.
+Promotion remains a separate explicit decision after runtime verification.

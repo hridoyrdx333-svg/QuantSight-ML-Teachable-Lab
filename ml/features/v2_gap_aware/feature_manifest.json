@@ -1,0 +1,33 @@
+{
+  "feature_version": "v2_gap_aware",
+  "generated_at_ms": 1789924500879,
+  "source_timeframe": "5m",
+  "gap_policy": "Split feature calculations at every missing 5m interval. No return, rolling indicator, EMA, RSI, ATR or label may cross a detected gap.",
+  "expected_interval_ms": 300000,
+  "files": [
+    {
+      "symbol": "BTCUSDT",
+      "path": "ml\\features\\v2_gap_aware\\BTCUSDT_5m.parquet",
+      "input_rows": 210240,
+      "output_rows": 210240,
+      "segments": 1,
+      "complete_training_rows": 210185
+    },
+    {
+      "symbol": "ETHUSDT",
+      "path": "ml\\features\\v2_gap_aware\\ETHUSDT_5m.parquet",
+      "input_rows": 210208,
+      "output_rows": 210208,
+      "segments": 31,
+      "complete_training_rows": 209447
+    },
+    {
+      "symbol": "SOLUSDT",
+      "path": "ml\\features\\v2_gap_aware\\SOLUSDT_5m.parquet",
+      "input_rows": 209893,
+      "output_rows": 209893,
+      "segments": 54,
+      "complete_training_rows": 208532
+    }
+  ]
+}
