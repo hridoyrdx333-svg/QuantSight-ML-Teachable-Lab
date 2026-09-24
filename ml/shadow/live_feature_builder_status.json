@@ -3,33 +3,33 @@
   "stage": "waiting_for_aligned_5m",
   "snapshot": {
     "BTCUSDT": {
-      "live_trade": 1790197500000,
-      "live_mark": 1790197500000,
-      "live_index": 1790197200000,
-      "raw_trade": 1790197200000,
-      "raw_mark": 1790197500000,
-      "raw_index": 1790197200000,
-      "feature": 1790197200000
+      "live_trade": 1790269500000,
+      "live_mark": 1790269500000,
+      "live_index": 1790269200000,
+      "raw_trade": 1790269200000,
+      "raw_mark": 1790269500000,
+      "raw_index": 1790269200000,
+      "feature": 1790269200000
     },
     "ETHUSDT": {
-      "live_trade": 1790197500000,
-      "live_mark": 1790197500000,
-      "live_index": 1790197200000,
-      "raw_trade": 1790197200000,
-      "raw_mark": 1790197500000,
-      "raw_index": 1790197200000,
-      "feature": 1790197200000
+      "live_trade": 1790269500000,
+      "live_mark": 1790269200000,
+      "live_index": 1790269200000,
+      "raw_trade": 1790269200000,
+      "raw_mark": 1790269200000,
+      "raw_index": 1790269200000,
+      "feature": 1790269200000
     },
     "SOLUSDT": {
-      "live_trade": 1790197500000,
-      "live_mark": 1790197500000,
-      "live_index": 1790197200000,
-      "raw_trade": 1790197200000,
-      "raw_mark": 1790197500000,
-      "raw_index": 1790197200000,
-      "feature": 1790197200000
+      "live_trade": 1790269500000,
+      "live_mark": 1790269200000,
+      "live_index": 1790269200000,
+      "raw_trade": 1790269200000,
+      "raw_mark": 1790269200000,
+      "raw_index": 1790269200000,
+      "feature": 1790269200000
     }
   },
-  "last_ready_ms": 1790197200000,
+  "last_ready_ms": 1790269200000,
   "last_error": null
 }
