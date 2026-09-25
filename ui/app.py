@@ -518,9 +518,8 @@ def feature_versions():
             }
         )
 
-    versions.sort(
-        key=lambda x:
-            x.get("modified", 0),
+        versions.sort(
+        key=lambda x: (x.get("modified", 0), x.get("version", "")),
         reverse=True,
     )
 
