@@ -48,8 +48,8 @@ load_dotenv(ROOT / ".env")
 
 app = Flask(
     __name__,
-    template_folder="templates",
-    static_folder="static",
+    template_folder=str(ROOT / "ui" / "templates"),
+    static_folder=str(ROOT / "ui" / "static"),
 )
 
 STATE_LOCK = threading.Lock()
