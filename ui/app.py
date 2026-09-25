@@ -1693,9 +1693,11 @@ def home():
 
 @app.get("/api/status")
 def status():
-    return jsonify(
-        get_status()
-    )
+    try:
+        return jsonify(get_status())
+    except Exception as e:
+        import traceback
+        return jsonify({"error": str(e), "traceback": traceback.format_exc()}), 500
 
 
 @app.post(
