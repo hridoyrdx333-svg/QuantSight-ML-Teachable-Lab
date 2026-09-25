@@ -1713,9 +1713,11 @@ def cancel_current_task():
 
 @app.get("/")
 def home():
-    return render_template(
-        "index.html"
-    )
+    try:
+        return render_template("index.html")
+    except Exception as e:
+        import traceback
+        return f"<pre>{traceback.format_exc()}</pre>", 500
 
 
 @app.get("/api/status")
