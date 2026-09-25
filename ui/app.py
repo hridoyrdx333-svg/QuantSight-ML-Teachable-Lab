@@ -106,25 +106,15 @@ def safe_float(value):
 def pid_running(pid: int | None) -> bool:
     if not pid:
         return False
-
     try:
-        result = subprocess.run(
-            [
-                "powershell",
-                "-NoProfile",
-                "-Command",
-                (
-                    f"if (Get-Process -Id {int(pid)} "
-                    "-ErrorAction SilentlyContinue) "
-                    "{ exit 0 } else { exit 1 }"
-                ),
-            ],
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-        )
-
-        return result.returncode == 0
-
+        if sys.platform == "win32":
+            result = subprocess.run(["tasklist", "/FI", f"PID eq {int(pid)}"], capture_output=True, text=True)
+            return str(int(pid)) in result.stdout
+        else:
+            os.kill(int(pid), 0)
+            return True
+    except OSError:
+        return False
     except Exception:
         return False
 
@@ -132,25 +122,13 @@ def pid_running(pid: int | None) -> bool:
 def stop_pid(pid: int | None) -> bool:
     if not pid:
         return False
-
     try:
-        subprocess.run(
-            [
-                "powershell",
-                "-NoProfile",
-                "-Command",
-                (
-                    f"Stop-Process -Id {int(pid)} "
-                    "-Force "
-                    "-ErrorAction SilentlyContinue"
-                ),
-            ],
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-        )
-
+        if sys.platform == "win32":
+            subprocess.run(["taskkill", "/F", "/PID", str(int(pid))], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        else:
+            import signal
+            os.kill(int(pid), signal.SIGTERM)
         return True
-
     except Exception:
         return False
 
