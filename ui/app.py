@@ -1419,12 +1419,7 @@ def start_job(
         process = None
 
         try:
-            python_exe = (
-                ROOT
-                / ".venv"
-                / "Scripts"
-                / "python.exe"
-            )
+            python_exe = sys.executable
 
             env = os.environ.copy()
 
@@ -1831,12 +1826,7 @@ def live_start():
             ), 409
 
         try:
-            python_exe = (
-                ROOT
-                / ".venv"
-                / "Scripts"
-                / "python.exe"
-            )
+            python_exe = sys.executable
 
             process = (
                 subprocess.Popen(
