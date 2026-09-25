@@ -1,0 +1,2742 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <title>QuantSight ML Lab</title>
+
+
+
+    <style>
+
+        * {
+
+            box-sizing: border-box;
+
+        }
+
+
+
+        html,
+
+        body {
+
+            margin: 0;
+
+            min-height: 100%;
+
+            background: #0b1220;
+
+            color: #f4f7fb;
+
+            font-family:
+
+                Inter,
+
+                system-ui,
+
+                -apple-system,
+
+                BlinkMacSystemFont,
+
+                "Segoe UI",
+
+                sans-serif;
+
+        }
+
+
+
+        body {
+
+            overflow-x: hidden;
+
+        }
+
+
+
+        .container {
+
+            width: 100%;
+
+            max-width: 1500px;
+
+            margin: 0 auto;
+
+            padding: 14px;
+
+        }
+
+
+
+        h1 {
+
+            margin: 0;
+
+            font-size: 28px;
+
+        }
+
+
+
+        .subtitle {
+
+            margin: 4px 0 10px;
+
+            color: #9ec5ff;
+
+            font-size: 13px;
+
+        }
+
+
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(6, minmax(0, 1fr));
+
+            gap: 8px;
+
+        }
+
+
+
+        .card,
+
+        .panel,
+
+        .mini {
+
+            background: #121d30;
+
+            border: 1px solid #29405f;
+
+            border-radius: 9px;
+
+        }
+
+
+
+        .card {
+
+            padding: 11px;
+
+            min-height: 70px;
+
+        }
+
+
+
+        .label {
+
+            color: #8fb8e8;
+
+            font-size: 10px;
+
+            text-transform: uppercase;
+
+        }
+
+
+
+        .value {
+
+            margin-top: 5px;
+
+            font-size: 17px;
+
+            font-weight: 700;
+
+        }
+
+
+
+        .panel {
+
+            margin-top: 9px;
+
+            padding: 12px;
+
+        }
+
+
+
+        .panel h2 {
+
+            margin: 0 0 9px;
+
+            font-size: 19px;
+
+        }
+
+
+
+        .two {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 9px;
+
+        }
+
+
+
+        .task-grid {
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(6, minmax(0, 1fr));
+
+            gap: 7px;
+
+        }
+
+
+
+        .mini {
+
+            padding: 9px;
+
+            background: #0d1728;
+
+        }
+
+
+
+        .mini .value {
+
+            font-size: 14px;
+
+        }
+
+
+
+        .buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+        }
+
+
+
+        button {
+
+            border: 0;
+
+            border-radius: 7px;
+
+            padding: 8px 11px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            background: #2374df;
+
+            color: white;
+
+        }
+
+
+
+        button:disabled {
+
+            opacity: 0.4;
+
+            cursor: not-allowed;
+
+        }
+
+
+
+        .green {
+
+            background: #168555;
+
+        }
+
+
+
+        .red {
+
+            background: #b83d45;
+
+        }
+
+
+
+        .running,
+
+        .good {
+
+            color: #55d89a;
+
+        }
+
+
+
+        .bad,
+
+        .stopped {
+
+            color: #ff7c88;
+
+        }
+
+
+
+        .warn {
+
+            color: #ffd166;
+
+        }
+
+
+
+        .banner {
+
+            display: none;
+
+            padding: 9px;
+
+            margin-top: 8px;
+
+            border-radius: 7px;
+
+            font-weight: 700;
+
+        }
+
+
+
+        .banner-warning {
+
+            display: block;
+
+            background: #392d0e;
+
+            color: #ffd166;
+
+        }
+
+
+
+        .banner-critical {
+
+            display: block;
+
+            background: #3b1519;
+
+            color: #ff9da6;
+
+        }
+
+
+
+        table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            font-size: 12px;
+
+        }
+
+
+
+        th,
+
+        td {
+
+            padding: 6px 7px;
+
+            border-bottom: 1px solid #29405f;
+
+            text-align: left;
+
+            white-space: nowrap;
+
+        }
+
+
+
+        th {
+
+            color: #94bce9;
+
+        }
+
+
+
+        pre {
+
+            background: #050c17;
+
+            padding: 9px;
+
+            border-radius: 7px;
+
+            margin: 0;
+
+            max-height: 190px;
+
+            overflow: auto;
+
+            white-space: pre-wrap;
+
+            font-size: 11px;
+
+        }
+
+
+
+        .metric-good {
+
+            font-weight: 700;
+
+        }
+
+
+
+        .section-note {
+
+            margin-top: 7px;
+
+            color: #8fb8e8;
+
+            font-size: 11px;
+
+        }
+
+
+
+        @media (max-width: 1100px) {
+
+            .cards {
+
+                grid-template-columns:
+
+                    repeat(3, 1fr);
+
+            }
+
+
+
+            .task-grid {
+
+                grid-template-columns:
+
+                    repeat(3, 1fr);
+
+            }
+
+
+
+            .two {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="container">
+
+
+
+    <h1>QuantSight ML Lab</h1>
+
+
+
+    <div class="subtitle">
+
+        Data â†’ Features â†’ Training â†’ Review â†’ Paper Readiness
+
+    </div>
+
+
+
+
+
+    <div class="cards">
+
+
+
+        <div class="card">
+
+            <div class="label">Massive API</div>
+
+            <div id="massive" class="value">...</div>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="label">Validation</div>
+
+            <div id="validation" class="value">...</div>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="label">Feature Version</div>
+
+            <div id="feature-version" class="value">None</div>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="label">Approved Model</div>
+
+            <div id="approved" class="value">None</div>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="label">Current Task</div>
+
+            <div id="current-task" class="value">Idle</div>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="label">Live Collector</div>
+
+            <div id="live-status" class="value stopped">
+
+                STOPPED
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="label">Feature Builder</div>
+
+            <div id="builder-status" class="value stopped">
+
+                STOPPED
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="label">Live Shadow</div>
+
+            <div id="shadow-proc-status" class="value stopped">
+
+                STOPPED
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="label">V4 Progress</div>
+
+            <div id="v4-progress" class="value">0%</div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+    <div class="panel">
+
+
+
+        <h2>Task Monitor</h2>
+
+
+
+        <div class="task-grid">
+
+
+
+            <div class="mini">
+
+                <div class="label">Status</div>
+
+                <div id="task-status" class="value">idle</div>
+
+            </div>
+
+
+
+            <div class="mini">
+
+                <div class="label">Stage</div>
+
+                <div id="task-stage" class="value">-</div>
+
+            </div>
+
+
+
+            <div class="mini">
+
+                <div class="label">PID</div>
+
+                <div id="task-pid" class="value">-</div>
+
+            </div>
+
+
+
+            <div class="mini">
+
+                <div class="label">Elapsed</div>
+
+                <div id="task-elapsed" class="value">00:00:00</div>
+
+            </div>
+
+
+
+            <div class="mini">
+
+                <div class="label">No Output</div>
+
+                <div id="task-silent" class="value">0 sec</div>
+
+            </div>
+
+
+
+            <div class="mini">
+
+                <div class="label">Exit Code</div>
+
+                <div id="task-exit" class="value">-</div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <div id="stall-banner" class="banner"></div>
+
+
+
+        <div class="buttons" style="margin-top:9px;">
+
+            <button
+
+                id="cancel-task"
+
+                class="red"
+
+                onclick="cancelTask()"
+
+                disabled
+
+            >
+
+                Cancel Current Task
+
+            </button>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+    <div class="two">
+
+
+
+        <div class="panel">
+
+
+
+            <h2>Actions</h2>
+
+
+
+            <div class="buttons">
+
+
+
+                <button id="btn-collect" onclick="action('collect')">
+
+                    Collect Historical
+
+                </button>
+
+
+
+                <button id="btn-validate" onclick="action('validate')">
+
+                    Validate Data
+
+                </button>
+
+
+
+                <button id="btn-features" onclick="action('features')">
+
+                    Build Features
+
+                </button>
+
+
+
+                <button id="btn-train" onclick="action('train')">
+
+                    Train Models
+
+                </button>
+
+
+
+                <button id="btn-promote" onclick="promoteModel()">
+
+                    Promote Model
+
+                </button>
+
+
+
+                <button id="btn-export" onclick="action('export')">
+
+                    Export
+
+                </button>
+
+
+
+            </div>
+
+
+
+            <div class="section-note">
+
+                Heavy task à¦šà¦²à¦²à§‡ à¦¦à§à¦¬à¦¿à¦¤à§€à§Ÿ heavy task backend à¦¥à§‡à¦•à§‡à¦‡ reject à¦¹à¦¬à§‡à¥¤
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+        <div class="panel">
+
+
+
+            <h2>Live Market Data</h2>
+
+
+
+            <div class="buttons">
+
+
+
+                <button
+
+                    id="start-live"
+
+                    class="green"
+
+                    onclick="startLive()"
+
+                >
+
+                    Start Live Collector
+
+                </button>
+
+
+
+                <button
+
+                    id="stop-live"
+
+                    class="red"
+
+                    onclick="stopLive()"
+
+                >
+
+                    Stop Live Collector
+
+                </button>
+
+
+
+            </div>
+
+
+
+            <div class="section-note">
+
+                Orderbook data background-à¦ à¦œà¦®à¦¬à§‡à¥¤
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+    <div class="panel">
+
+
+
+        <h2>Live Shadow Monitor</h2>
+
+
+
+        <div class="section-note" id="shadow-note">
+
+            Waiting for shadow runtime data.
+
+        </div>
+
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Symbol</th>
+
+                    <th>Decision</th>
+
+                    <th>Probability Up</th>
+
+                    <th>Threshold</th>
+
+                    <th>Feature Age</th>
+
+                    <th>Orders</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="shadow-body"></tbody>
+
+        </table>
+
+
+
+    </div>
+
+
+
+
+
+    <div class="panel">
+
+
+
+        <h2>Paper-Trade Readiness</h2>
+
+
+
+        <table>
+
+            <tbody id="readiness-body"></tbody>
+
+        </table>
+
+
+
+    </div>
+
+
+
+
+
+    <div class="panel">
+
+
+
+        <h2>Model Results</h2>
+
+
+
+        <div id="model-summary" class="section-note">
+
+            No saved training report.
+
+        </div>
+
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Version</th>
+
+                    <th>Model</th>
+
+                    <th>Test ROC-AUC</th>
+
+                    <th>Precision</th>
+
+                    <th>Recall</th>
+
+                    <th>Brier</th>
+
+                    <th>Log-loss</th>
+
+                </tr>
+
+            </thead>
+
+
+
+            <tbody id="model-body"></tbody>
+
+        </table>
+
+
+
+    </div>
+
+
+
+
+
+    <div class="panel">
+
+
+
+        <h2>Feature Versions</h2>
+
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Version</th>
+
+                    <th>Timeframe</th>
+
+                    <th>Symbols</th>
+
+                    <th>Orderbook in Training</th>
+
+                </tr>
+
+            </thead>
+
+
+
+            <tbody id="feature-body"></tbody>
+
+        </table>
+
+
+
+    </div>
+
+
+
+
+
+    <div class="panel">
+
+
+
+        <h2>Dataset Status</h2>
+
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Symbol</th>
+
+                    <th>1m Raw</th>
+
+                    <th>5m</th>
+
+                    <th>15m</th>
+
+                    <th>1h</th>
+
+                    <th>Funding</th>
+
+                    <th>Orderbook</th>
+
+                    <th>OB Coverage</th>
+
+                </tr>
+
+            </thead>
+
+
+
+            <tbody id="dataset-body"></tbody>
+
+        </table>
+
+
+
+    </div>
+
+
+
+
+
+    <div class="panel">
+
+
+
+        <h2>Latest Result</h2>
+
+
+
+        <pre id="latest-result">Ready</pre>
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+    const heavyButtons = [
+
+        "btn-collect",
+
+        "btn-validate",
+
+        "btn-features",
+
+        "btn-train",
+
+        "btn-promote",
+
+        "btn-export"
+
+    ];
+
+
+
+
+
+    function metric(value, digits = 4) {
+
+        if (
+
+            value === null
+
+            || value === undefined
+
+            || Number.isNaN(Number(value))
+
+        ) {
+
+            return "-";
+
+        }
+
+
+
+        return Number(value).toFixed(digits);
+
+    }
+
+
+
+
+
+    function rows(item) {
+
+        if (!item || !item.exists) {
+
+            return "-";
+
+        }
+
+
+
+        return Number(
+
+            item.rows || 0
+
+        ).toLocaleString();
+
+    }
+
+
+
+
+
+    function duration(seconds) {
+
+        seconds = Number(seconds || 0);
+
+
+
+        const h =
+
+            Math.floor(seconds / 3600);
+
+
+
+        const m =
+
+            Math.floor(
+
+                (seconds % 3600) / 60
+
+            );
+
+
+
+        const s =
+
+            Math.floor(seconds % 60);
+
+
+
+        return [
+
+            String(h).padStart(2, "0"),
+
+            String(m).padStart(2, "0"),
+
+            String(s).padStart(2, "0")
+
+        ].join(":");
+
+    }
+
+
+
+
+
+    function disableHeavy(disabled) {
+
+        heavyButtons.forEach(id => {
+
+            const element =
+
+                document.getElementById(id);
+
+
+
+            if (element) {
+
+                element.disabled =
+
+                    disabled;
+
+            }
+
+        });
+
+    }
+
+
+
+
+
+    function readinessLabel(value) {
+
+        return value
+
+            ? '<span class="good">PASS</span>'
+
+            : '<span class="bad">NOT READY</span>';
+
+    }
+
+
+
+
+
+    async function refresh() {
+
+        try {
+
+            const response =
+
+                await fetch(
+
+                    "/api/status",
+
+                    {
+
+                        cache: "no-store"
+
+                    }
+
+                );
+
+
+
+            if (!response.ok) {
+
+                throw new Error(
+
+                    "Status API HTTP "
+
+                    + response.status
+
+                );
+
+            }
+
+
+
+            const data =
+
+                await response.json();
+
+
+
+
+
+            document.getElementById(
+
+                "massive"
+
+            ).textContent =
+
+                data.massive_api_key
+
+                    ? "CONNECTED"
+
+                    : "MISSING";
+
+
+
+
+
+            const validation =
+
+                data.validation || {};
+
+
+
+            document.getElementById(
+
+                "validation"
+
+            ).textContent =
+
+                validation.overall
+
+                || validation.status
+
+                || (
+
+                    Object.keys(validation).length
+
+                        ? "CHECK"
+
+                        : "None"
+
+                );
+
+
+
+
+
+            const features =
+
+                data.features || {};
+
+
+
+            document.getElementById(
+
+                "feature-version"
+
+            ).textContent =
+
+                features.current_version
+
+                || "None";
+
+
+
+
+
+            const approved =
+
+                data.approved || {};
+
+
+
+            document.getElementById(
+
+                "approved"
+
+            ).textContent =
+
+                approved.model_name
+
+                || approved.model
+
+                || "None";
+
+
+
+
+
+            const task =
+
+                data.task || {};
+
+
+
+            const running =
+
+                Boolean(task.running);
+
+
+
+            document.getElementById(
+
+                "current-task"
+
+            ).textContent =
+
+                running
+
+                    ? (
+
+                        task.label
+
+                        || "Running"
+
+                    )
+
+                    : "Idle";
+
+
+
+            document.getElementById(
+
+                "task-status"
+
+            ).textContent =
+
+                task.status
+
+                || "idle";
+
+
+
+            document.getElementById(
+
+                "task-stage"
+
+            ).textContent =
+
+                task.stage
+
+                || "-";
+
+
+
+            document.getElementById(
+
+                "task-pid"
+
+            ).textContent =
+
+                task.pid
+
+                || "-";
+
+
+
+            document.getElementById(
+
+                "task-elapsed"
+
+            ).textContent =
+
+                duration(
+
+                    task.elapsed_seconds
+
+                );
+
+
+
+            document.getElementById(
+
+                "task-silent"
+
+            ).textContent =
+
+                Number(
+
+                    task.silent_seconds
+
+                    || 0
+
+                ).toLocaleString()
+
+                + " sec";
+
+
+
+            document.getElementById(
+
+                "task-exit"
+
+            ).textContent =
+
+                task.exit_code === null
+
+                || task.exit_code === undefined
+
+                    ? "-"
+
+                    : task.exit_code;
+
+
+
+            document.getElementById(
+
+                "latest-result"
+
+            ).textContent =
+
+                task.last_message
+
+                || "Ready";
+
+
+
+
+
+            disableHeavy(
+
+                running
+
+            );
+
+
+
+            document.getElementById(
+
+                "cancel-task"
+
+            ).disabled =
+
+                !running;
+
+
+
+
+
+            const banner =
+
+                document.getElementById(
+
+                    "stall-banner"
+
+                );
+
+
+
+            banner.className =
+
+                "banner";
+
+
+
+            banner.textContent =
+
+                "";
+
+
+
+            if (
+
+                task.stall_level
+
+                === "warning"
+
+            ) {
+
+                banner.className =
+
+                    "banner banner-warning";
+
+
+
+                banner.textContent =
+
+                    "Warning: 10 à¦®à¦¿à¦¨à¦¿à¦Ÿ à¦§à¦°à§‡ à¦¨à¦¤à§à¦¨ output à¦¨à§‡à¦‡à¥¤";
+
+            }
+
+
+
+            if (
+
+                task.stall_level
+
+                === "critical"
+
+            ) {
+
+                banner.className =
+
+                    "banner banner-critical";
+
+
+
+                banner.textContent =
+
+                    "Critical: 20 à¦®à¦¿à¦¨à¦¿à¦Ÿ à¦§à¦°à§‡ progress à¦¨à§‡à¦‡à¥¤ Cancel à¦•à¦°à§‡ investigate à¦•à¦°à§à¦¨à¥¤";
+
+            }
+
+
+
+
+
+            const live = data.live || {};
+
+const liveRunning = Boolean(live.running);
+
+const liveStatus = document.getElementById("live-status");
+
+liveStatus.textContent = liveRunning ? ("RUNNING" + (live.pid ? " · " + live.pid : "")) : "STOPPED";
+
+liveStatus.className = "value " + (liveRunning ? "running" : "stopped");
+
+
+
+            const builder = data.builder || {};
+
+const builderRunning = Boolean(builder.running);
+
+const builderStatus = document.getElementById("builder-status");
+
+builderStatus.textContent = builderRunning ? ("RUNNING" + (builder.pid ? " · " + builder.pid : "")) : "STOPPED";
+
+builderStatus.className = "value " + (builderRunning ? "running" : "stopped");
+
+
+
+            const shadowProc = data.shadow_proc || {};
+
+const shadowProcRunning = Boolean(shadowProc.running);
+
+const shadowProcStatus = document.getElementById("shadow-proc-status");
+
+shadowProcStatus.textContent = shadowProcRunning ? ("RUNNING" + (shadowProc.pid ? " · " + shadowProc.pid : "")) : "STOPPED";
+
+shadowProcStatus.className = "value " + (shadowProcRunning ? "running" : "stopped");
+
+
+
+            document.getElementById(
+
+                "start-live"
+
+            ).disabled =
+
+                liveRunning;
+
+
+
+            document.getElementById(
+
+                "stop-live"
+
+            ).disabled =
+
+                !liveRunning;
+
+
+
+
+
+            const progress =
+
+                data.progress || {};
+
+
+
+            document.getElementById(
+
+                "v4-progress"
+
+            ).textContent =
+
+                (
+
+                    progress.percent
+
+                    ?? 0
+
+                )
+
+                + "%";
+
+
+
+
+
+            const shadow =
+
+                data.shadow || {};
+
+
+
+            const shadowLatest =
+
+                shadow.latest || {};
+
+
+
+            const shadowFresh =
+
+                Boolean(
+
+                    shadow.fresh
+
+                );
+
+
+
+            const shadowNoErrors =
+
+                Boolean(
+
+                    shadow.no_errors
+
+                );
+
+
+
+            const shadowTop =
+
+                document.getElementById(
+
+                    "shadow-status"
+
+                );
+
+
+
+            if (shadowTop) {
+
+                shadowTop.textContent =
+
+                    shadowFresh
+
+                        ? "FRESH"
+
+                        : (
+
+                            shadowNoErrors
+
+                                ? "STALE"
+
+                                : "WAITING"
+
+                        );
+
+
+
+                shadowTop.className =
+
+                    "value "
+
+                    + (
+
+                        shadowFresh
+
+                            ? "running"
+
+                            : "stopped"
+
+                    );
+
+            }
+
+
+
+            const shadowBody =
+
+                document.getElementById(
+
+                    "shadow-body"
+
+                );
+
+
+
+            shadowBody.innerHTML = "";
+
+
+
+            [
+
+                "BTCUSDT",
+
+                "ETHUSDT",
+
+                "SOLUSDT"
+
+            ].forEach(
+
+                symbol => {
+
+                    const item =
+
+                        shadowLatest[
+
+                            symbol
+
+                        ] || {};
+
+
+
+                    const decision =
+
+                        item.decision
+
+                        || "-";
+
+
+
+                    const probability =
+
+                        item.probability_up;
+
+
+
+                    const threshold =
+
+                        item.locked_threshold;
+
+
+
+                    const featureAge =
+
+                        item.feature_age_seconds;
+
+
+
+                    const tr =
+
+                        document.createElement(
+
+                            "tr"
+
+                        );
+
+
+
+                    tr.innerHTML = `
+
+                        <td>${symbol}</td>
+
+                        <td>${decision}</td>
+
+                        <td>${metric(probability)}</td>
+
+                        <td>${metric(threshold, 2)}</td>
+
+                        <td>${
+
+                            featureAge === null
+
+                            || featureAge === undefined
+
+                                ? "-"
+
+                                : Math.round(
+
+                                    Number(
+
+                                        featureAge
+
+                                    )
+
+                                ) + " sec"
+
+                        }</td>
+
+                        <td>${
+
+                            item.orders_sent === true
+
+                                ? "YES"
+
+                                : "NO"
+
+                        }</td>
+
+                    `;
+
+
+
+                    shadowBody.appendChild(
+
+                        tr
+
+                    );
+
+                }
+
+            );
+
+
+
+            const shadowRunnerStatus =
+
+                (
+
+                    shadow.status
+
+                    || {}
+
+                ).status
+
+                || "not running";
+
+
+
+            const builderNoteStatus =
+
+                (
+
+                    shadow.feature_builder
+
+                    || {}
+
+                ).status
+
+                || "unknown";
+
+
+
+            document.getElementById(
+
+                "shadow-note"
+
+            ).textContent =
+
+                "Runner: "
+
+                + shadowRunnerStatus
+
+                + " Â· Feature builder: "
+
+                + builderNoteStatus
+
+                + " Â· Fresh: "
+
+                + (
+
+                    shadowFresh
+
+                        ? "YES"
+
+                        : "NO"
+
+                );
+
+
+
+
+
+            const readiness =
+
+                data.readiness || {};
+
+
+
+            const readinessBody =
+
+                document.getElementById(
+
+                    "readiness-body"
+
+                );
+
+
+
+            readinessBody.innerHTML = "";
+
+
+
+            const readinessItems = {
+
+                "Historical Data":
+
+                    readiness.historical_data,
+
+
+
+                "Funding Data":
+
+                    readiness.funding_data,
+
+
+
+                "Orderbook Collection Started":
+
+                    readiness.orderbook_collection_started,
+
+
+
+                "Feature Build":
+
+                    readiness.feature_build,
+
+
+
+                "Validation Report":
+
+                    readiness.validation_report,
+
+
+
+                "Training Report":
+
+                    readiness.training_report,
+
+
+
+                "Approved Model":
+
+                    readiness.approved_model,
+
+
+
+                "Live Shadow Fresh":
+
+                    readiness.live_shadow_fresh,
+
+
+
+                "Demo Paper Ready":
+
+                    readiness.demo_paper_ready
+
+            };
+
+
+
+            Object.entries(
+
+                readinessItems
+
+            ).forEach(
+
+                ([name, value]) => {
+
+                    const tr =
+
+                        document.createElement(
+
+                            "tr"
+
+                        );
+
+
+
+                    tr.innerHTML = `
+
+                        <td>${name}</td>
+
+                        <td>${readinessLabel(value)}</td>
+
+                    `;
+
+
+
+                    readinessBody.appendChild(
+
+                        tr
+
+                    );
+
+                }
+
+            );
+
+
+
+
+
+            const modelData =
+
+                data.models || {};
+
+
+
+            const reports =
+
+                modelData.reports || [];
+
+
+
+            const modelBody =
+
+                document.getElementById(
+
+                    "model-body"
+
+                );
+
+
+
+            modelBody.innerHTML = "";
+
+
+
+            let modelRows = 0;
+
+
+
+            reports.forEach(
+
+                report => {
+
+
+
+                    const models =
+
+                        report.models || {};
+
+
+
+                    Object.entries(
+
+                        models
+
+                    ).forEach(
+
+                        ([name, result]) => {
+
+
+
+                            const test =
+
+                                result.test || {};
+
+
+
+                            const tr =
+
+                                document.createElement(
+
+                                    "tr"
+
+                                );
+
+
+
+                            tr.innerHTML = `
+
+                                <td>${report.feature_version || "-"}</td>
+
+                                <td>${name}</td>
+
+                                <td>${metric(test.roc_auc)}</td>
+
+                                <td>${metric(test.precision)}</td>
+
+                                <td>${metric(test.recall)}</td>
+
+                                <td>${metric(test.brier)}</td>
+
+                                <td>${metric(test.log_loss)}</td>
+
+                            `;
+
+
+
+                            modelBody.appendChild(
+
+                                tr
+
+                            );
+
+
+
+                            modelRows++;
+
+                        }
+
+                    );
+
+                }
+
+            );
+
+
+
+            document.getElementById(
+
+                "model-summary"
+
+            ).textContent =
+
+                modelRows
+
+                    ? (
+
+                        reports.length
+
+                        + " saved feature-version report(s) found."
+
+                    )
+
+                    : (
+
+                        "No saved training report available."
+
+                    );
+
+
+
+
+
+            const featureBody =
+
+                document.getElementById(
+
+                    "feature-body"
+
+                );
+
+
+
+            featureBody.innerHTML = "";
+
+
+
+            (
+
+                features.versions
+
+                || []
+
+            ).forEach(
+
+                version => {
+
+
+
+                    const tr =
+
+                        document.createElement(
+
+                            "tr"
+
+                        );
+
+
+
+                    tr.innerHTML = `
+
+                        <td>${version.version || "-"}</td>
+
+                        <td>${version.source_timeframe || "-"}</td>
+
+                        <td>${version.files || 0}</td>
+
+                        <td>${
+
+                            version.orderbook_in_training === true
+
+                                ? "YES"
+
+                                : version.orderbook_in_training === false
+
+                                    ? "NO"
+
+                                    : "-"
+
+                        }</td>
+
+                    `;
+
+
+
+                    featureBody.appendChild(
+
+                        tr
+
+                    );
+
+                }
+
+            );
+
+
+
+
+
+            const datasetBody =
+
+                document.getElementById(
+
+                    "dataset-body"
+
+                );
+
+
+
+            datasetBody.innerHTML = "";
+
+
+
+            const dataset =
+
+                data.rows || {};
+
+
+
+            Object.keys(
+
+                dataset
+
+            ).forEach(
+
+                symbol => {
+
+
+
+                    const item =
+
+                        dataset[symbol];
+
+
+
+                    const ob =
+
+                        item.orderbook || {};
+
+
+
+                    const coverage =
+
+                        Number(
+
+                            ob.coverage_hours
+
+                            || 0
+
+                        );
+
+
+
+                    const coverageText =
+
+                        coverage >= 24
+
+                            ? (
+
+                                (coverage / 24)
+
+                                .toFixed(2)
+
+                                + " days"
+
+                            )
+
+                            : (
+
+                                coverage.toFixed(2)
+
+                                + " h"
+
+                            );
+
+
+
+                    const tr =
+
+                        document.createElement(
+
+                            "tr"
+
+                        );
+
+
+
+                    tr.innerHTML = `
+
+                        <td>${symbol}</td>
+
+                        <td>${rows(item["1m"])}</td>
+
+                        <td>${rows(item["5m"])}</td>
+
+                        <td>${rows(item["15m"])}</td>
+
+                        <td>${rows(item["1h"])}</td>
+
+                        <td>${rows(item["funding"])}</td>
+
+                        <td>${rows(item["orderbook"])}</td>
+
+                        <td>${coverageText}</td>
+
+                    `;
+
+
+
+                    datasetBody.appendChild(
+
+                        tr
+
+                    );
+
+                }
+
+            );
+
+
+
+        } catch (error) {
+
+            console.error("UI refresh error caught:", error);
+
+            document.getElementById(
+
+                "latest-result"
+
+            ).textContent =
+
+                "UI refresh error: "
+
+                + error
+
+                + "\nCheck that ML_LAB.bat / ui/app.py is still running on port 8765.";
+
+        }
+
+    }
+
+
+
+
+
+    async function action(name) {
+
+        try {
+
+            const response =
+
+                await fetch(
+
+                    "/api/action/" + name,
+
+                    {
+
+                        method: "POST"
+
+                    }
+
+                );
+
+
+
+            const data =
+
+                await response.json();
+
+
+
+            if (!data.ok) {
+
+                alert(
+
+                    data.message
+
+                    || "Action failed"
+
+                );
+
+            }
+
+
+
+            await refresh();
+
+
+
+        } catch (error) {
+
+            alert(error);
+
+        }
+
+    }
+
+
+
+
+
+    async function cancelTask() {
+
+        if (
+
+            !confirm("Cancel current heavy task?")
+
+        ) {
+
+            return;
+
+        }
+
+
+
+        const response =
+
+            await fetch(
+
+                "/api/task/cancel",
+
+                {
+
+                    method: "POST"
+
+                }
+
+            );
+
+
+
+        const data =
+
+            await response.json();
+
+
+
+        if (!data.ok) {
+
+            alert(
+
+                data.message
+
+            );
+
+        }
+
+
+
+        await refresh();
+
+    }
+
+
+
+
+
+    async function startLive() {
+
+        const response =
+
+            await fetch(
+
+                "/api/live/start",
+
+                {
+
+                    method: "POST"
+
+                }
+
+            );
+
+
+
+        const data =
+
+            await response.json();
+
+
+
+        if (!data.ok) {
+
+            alert(
+
+                data.message
+
+            );
+
+        }
+
+
+
+        await refresh();
+
+    }
+
+
+
+
+
+    async function stopLive() {
+
+        const response =
+
+            await fetch(
+
+                "/api/live/stop",
+
+                {
+
+                    method: "POST"
+
+                }
+
+            );
+
+
+
+        const data =
+
+            await response.json();
+
+
+
+        if (!data.ok) {
+
+            alert(
+
+                data.message
+
+            );
+
+        }
+
+
+
+        await refresh();
+
+    }
+
+
+
+
+
+    async function promoteModel() {
+
+        const model =
+
+            prompt(
+
+                "Model name:\n"
+
+                + "logistic\n"
+
+                + "random_forest\n"
+
+                + "hist_gradient_boosting"
+
+            );
+
+
+
+        if (!model) {
+
+            return;
+
+        }
+
+
+
+        const response =
+
+            await fetch(
+
+                "/api/promote",
+
+                {
+
+                    method: "POST",
+
+
+
+                    headers: {
+
+                        "Content-Type":
+
+                            "application/json"
+
+                    },
+
+
+
+                    body: JSON.stringify(
+
+                        {
+
+                            model:
+
+                                model.trim()
+
+                        }
+
+                    )
+
+                }
+
+            );
+
+
+
+        const data =
+
+            await response.json();
+
+
+
+        if (!data.ok) {
+
+            alert(
+
+                data.message
+
+            );
+
+        }
+
+
+
+        await refresh();
+
+    }
+
+
+
+
+
+    refresh();
+
+
+
+    setInterval(
+
+        refresh,
+
+        2000
+
+    );
+
+</script>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
