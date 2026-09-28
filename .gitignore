@@ -26,3 +26,20 @@ config.json
 *.env
 config.env
 
+
+# Secrets
+!.env.example
+
+# Python
+
+# Frontend
+frontend/node_modules/
+frontend/.next/
+
+# Runtime / local generated state
+*.pid
+
+# Local audit/debug artifacts
+frontend-audit.zip
+QuantSight-Full-Audit.zip
+QuantSight-Full-Audit.tar.gz

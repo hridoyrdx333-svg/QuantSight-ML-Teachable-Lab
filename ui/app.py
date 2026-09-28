@@ -12,6 +12,7 @@ from dotenv import load_dotenv
 from flask import Flask, jsonify, render_template, request
 
 
+import sys
 ROOT = Path(__file__).resolve().parents[1]
 
 print("="*60, flush=True)
@@ -1696,7 +1697,6 @@ def status():
         return jsonify(get_status())
     except Exception as e:
         import traceback
-        return jsonify({"error": str(e), "traceback": traceback.format_exc()}), 500
 
 
 @app.post(

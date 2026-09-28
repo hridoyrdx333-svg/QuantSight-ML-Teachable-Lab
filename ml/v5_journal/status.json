@@ -1,7 +1,7 @@
 {
-  "prediction_count": 27,
+  "prediction_count": 36,
   "evaluated_count": 3,
-  "pending_count": 24,
+  "pending_count": 33,
   "by_symbol_precision": {
     "BTCUSDT": {
       "evaluated": 1,
