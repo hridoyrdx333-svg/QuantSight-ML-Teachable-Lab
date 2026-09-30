@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 import subprocess
@@ -18,7 +18,7 @@ INTERVAL_MS = 5 * 60 * 1000
 
 DATA_DIR = ROOT / "data"
 
-LIVE_TRADE_DIR = DATA_DIR / "live" / "kline"
+LIVE_TRADE_DIR = DATA_DIR / "live" / "trade_kline"
 LIVE_MARK_DIR = DATA_DIR / "live" / "mark_kline"
 LIVE_INDEX_DIR = DATA_DIR / "live" / "index_kline"
 

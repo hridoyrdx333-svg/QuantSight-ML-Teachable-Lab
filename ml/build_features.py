@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 import os
@@ -618,6 +618,22 @@ def prepare_funding(
         path
     )
 
+    # Funding backfill stores the usable event time in start_ms.
+    # Some rows keep timestamp_ms as NaN, so coalesce from start_ms.
+    if "start_ms" in funding.columns:
+        if "timestamp_ms" not in funding.columns:
+            funding["timestamp_ms"] = funding["start_ms"]
+        else:
+            funding["timestamp_ms"] = pd.to_numeric(
+                funding["timestamp_ms"],
+                errors="coerce",
+            ).fillna(
+                pd.to_numeric(
+                    funding["start_ms"],
+                    errors="coerce",
+                )
+            )
+
     required = {
         "timestamp_ms",
         "funding_rate",
@@ -727,6 +743,34 @@ def attach_funding(
             out[col] = np.nan
 
         return out
+
+    out["start_ms"] = pd.to_numeric(
+        out["start_ms"],
+        errors="coerce",
+    ).astype("int64")
+
+    funding["timestamp_ms"] = pd.to_numeric(
+        funding["timestamp_ms"],
+        errors="coerce",
+    )
+
+    funding = funding[
+        np.isfinite(funding["timestamp_ms"])
+    ].copy()
+
+    if funding.empty:
+        for col in [
+            "funding_rate",
+            "funding_change",
+            "funding_abs",
+            "funding_z_30",
+            "funding_regime",
+        ]:
+            out[col] = np.nan
+        return out
+
+    funding["timestamp_ms"] = funding["timestamp_ms"].astype("int64")
+    funding = funding.sort_values("timestamp_ms")
 
     out = pd.merge_asof(
         out,
@@ -1162,3 +1206,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
