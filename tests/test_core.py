@@ -10,22 +10,22 @@ class CoreTests(unittest.TestCase):
 
     def test_orderbook_snapshot_delta(self):
         b = LocalOrderBook()
-        b.update("snapshot", {
+        b.apply({
             "b":[["100","2"],["99","3"]],
             "a":[["101","4"],["102","5"]],
             "seq":1,
             "cts":1000,
-        }, 1001)
-        f = b.features("BTCUSDT", 50)
+        }, "snapshot", 1001)
+        f = b.feature_row("BTCUSDT", 50, 1001)
         self.assertAlmostEqual(f["best_bid"], 100)
         self.assertAlmostEqual(f["best_ask"], 101)
-        b.update("delta", {
+        b.apply({
             "b":[["100","0"],["100.5","1"]],
             "a":[["101","2"]],
             "seq":2,
             "cts":1100,
-        }, 1101)
-        f = b.features("BTCUSDT", 50)
+        }, "delta", 1101)
+        f = b.feature_row("BTCUSDT", 50, 1101)
         self.assertAlmostEqual(f["best_bid"], 100.5)
         self.assertAlmostEqual(f["ask_depth"], 7.0)
 
