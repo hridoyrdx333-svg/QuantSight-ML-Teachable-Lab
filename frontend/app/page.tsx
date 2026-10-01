@@ -159,36 +159,70 @@ function liveRows(status:QuantStatus | null){
   })
 }
 
-function MarketPage(){
+function MarketPage({ status }: { status: any }) {
+  const latest = status?.shadow?.latest || {}
+  const isFresh = status?.shadow?.fresh
+
+  const mappedMarkets = ['BTCUSDT', 'ETHUSDT', 'SOLUSDT'].map(sym => {
+    const s = latest[sym] || {}
+    const decision = s.decision || 'Pending'
+    const freshStatus = isFresh ? 'Fresh' : (decision === 'STALE' ? 'Stale' : 'Pending')
+
+    return {
+      symbol: sym,
+      price: 'Unavailable',
+      change: 'Unavailable',
+      funding: 'Not exposed by API',
+      basis: 'Not exposed by API',
+      regime: 'Not exposed by API',
+      fresh: freshStatus
+    }
+  })
+
   return <>
     <Hero eyebrow="MARKET CONTEXT / READ-ONLY FEED" title="Tracked instruments" sub="Live market context slots for BTC, ETH and SOL." action={<Badge tone="demo">API WIRING READY</Badge>}/>
     <section className="market-grid premium-market">
-      {markets.map((m)=><article className="market-card premium-card" key={m.symbol}>
-        <div className="market-top"><div><span className="symbol-label">{m.symbol}</span><small>PERPETUAL</small></div><Badge tone="neutral">{m.fresh}</Badge></div>
-        <strong className="market-price">{m.price}</strong>
-        <div className="mini-spark"><svg viewBox="0 0 180 48"><path d="M0 36 C25 30,35 38,55 27 S90 34,110 20 S145 28,180 10" fill="none" stroke="currentColor" strokeWidth="2"/></svg></div>
-        <div className="market-details">
-          <span>24h Change <b>{m.change}</b></span><span>Funding <b>{m.funding}</b></span><span>Mark / Index <b>{m.basis}</b></span><span>Regime <b>{m.regime}</b></span>
-        </div>
-      </article>)}
+      {mappedMarkets.map((m) => (
+        <article className="market-card premium-card" key={m.symbol}>
+          <div className="market-top">
+            <div><span className="symbol-label">{m.symbol}</span><small>PERPETUAL</small></div>
+            <Badge tone={m.fresh === 'Fresh' ? 'green' : (m.fresh === 'Stale' ? 'amber' : 'neutral')}>{m.fresh}</Badge>
+          </div>
+          <strong className="market-price">{m.price}</strong>
+          <div className="mini-spark"><span className="muted-text">Synthetic disabled</span></div>
+          <div className="market-details">
+            <span>24h Change <b>{m.change}</b></span>
+            <span>Funding <b>{m.funding}</b></span>
+            <span>Mark / Index <b>{m.basis}</b></span>
+            <span>Regime <b>{m.regime}</b></span>
+          </div>
+        </article>
+      ))}
     </section>
     <section className="lower-grid">
       <Panel eyebrow="MARKET CONTEXT" title="Cross-asset comparison" action={<span className="muted-text">No synthetic values</span>}>
-        <Table headers={['Symbol','Price','24h','Funding','Basis','Regime']} rows={markets.map(m=>[m.symbol,m.price,m.change,m.funding,m.basis,m.regime])}/>
+        <Table headers={['Symbol','Price','24h','Funding','Basis','Regime']} rows={mappedMarkets.map(m=>[m.symbol,m.price,m.change,m.funding,m.basis,m.regime])}/>
       </Panel>
-      <Panel eyebrow="REGIME" title="Context monitor"><PlaceholderChart/></Panel>
+      <Panel eyebrow="REGIME" title="Context monitor">
+        <div style={{ padding: '2rem 1.5rem', textAlign: 'center' }}>
+          <span className="muted-text">Chart data not exposed by API</span>
+        </div>
+      </Panel>
     </section>
   </>
 }
 
-function ModelPage(){
+function ModelPage({ status }: { status: any }) {
+  const freshness = status?.shadow?.fresh ? "Fresh" : (status?.shadow?.status?.updated_at ? "Stale" : "Awaiting API connection");
+  const lastUpdate = status?.shadow?.status?.updated_at ? new Date(status.shadow.status.updated_at).toLocaleTimeString() : "Awaiting API";
+  
   return <>
     <Hero eyebrow="MODEL STATUS / SHADOW RUNNER" title="QuantSight V4" sub="Feature contract, thresholds, approval state and diagnostics." action={<Badge tone="shadow">SHADOW MODE</Badge>}/>
     <section className="stats-grid">
       <Stat label="Feature Version" value="v4_context_plus" detail="Frozen feature contract"/>
       <Stat label="Model Type" value="Directional classifier" detail="Probability-based decision"/>
       <Stat label="Approved Model" value="NOT READY" detail="Formal approval pending" tone="amber"/>
-      <Stat label="Feature Freshness" value="Awaiting API" detail="Live age will appear here" tone="cyan"/>
+      <Stat label="Feature Freshness" value={freshness} detail={status?.shadow?.status?.updated_at ? "Live API connected" : "Awaiting API connection"} tone="cyan"/>
     </section>
     <section className="main-grid">
       <Panel eyebrow="DECISION CONFIGURATION" title="Locked thresholds">
@@ -203,7 +237,7 @@ function ModelPage(){
           <div><span>Feature version</span><strong>v4_context_plus</strong></div>
           <div><span>Approval state</span><strong className="amber-text">NOT READY</strong></div>
           <div><span>Execution</span><strong>Orders OFF</strong></div>
-          <div><span>Last signal update</span><strong>Awaiting API</strong></div>
+          <div><span>Last signal update</span><strong>{lastUpdate}</strong></div>
         </div>
       </Panel>
     </section>
@@ -836,8 +870,8 @@ function Dashboard({status}:{status:QuantStatus | null}){
 }
 
 function PageContent({route,status}:{route:string;status:QuantStatus | null}){
-  if(route==='/market') return <MarketPage/>
-  if(route==='/ai-model') return <ModelPage/>
+  if(route==='/market') return <MarketPage status={status}/>
+  if(route==='/ai-model') return <ModelPage status={status}/>
   if(route==='/signals') return <SignalsPage status={status}/>
   if(route==='/paper-trading') return <PaperPage/>
   if(route==='/outcomes') return <OutcomesPage/>
